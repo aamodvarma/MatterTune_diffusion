@@ -53,3 +53,10 @@ ignore = ["F722", "F821", "E731", "E741"]
 
 [tool.ruff.lint.isort]
 required-imports = ["from __future__ import annotations"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mattertune*"]
