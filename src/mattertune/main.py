@@ -335,7 +335,13 @@ def load_pretrained_model(
     model_config.optimizer = MC.AdamWConfig(lr=1.0e-4)
     energy = MC.EnergyPropertyConfig(
         loss=MC.MSELossConfig(), loss_coefficient=1.0)
-    model_config.properties = [energy]
+    forces = MC.ForcesPropertyConfig(
+        loss=MC.MSELossConfig(), loss_coefficient=1.0, conservative=True
+    )
+    stress = MC.StressesPropertyConfig(
+        loss=MC.MSELossConfig(), loss_coefficient=1.0, conservative=True
+    )
+    model_config.properties = [energy, forces]
     model = model_config.create_model()
     model.to(device)
     return model
