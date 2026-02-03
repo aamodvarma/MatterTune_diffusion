@@ -1,4 +1,5 @@
 from __future__ import annotations
+import torch
 
 import logging
 from collections.abc import Sequence
@@ -239,7 +240,8 @@ class MatterTuner:
         datamodule = MatterTuneDataModule(self.config.data)
 
         # Resolve the full trainer kwargs
-        trainer_kwargs_: dict[str, Any] = self.config.trainer._to_lightning_kwargs()
+        trainer_kwargs_: dict[str,
+                              Any] = self.config.trainer._to_lightning_kwargs()
 
         # Update with the user-specified kwargs in the method call
         if trainer_kwargs is not None:
@@ -279,3 +281,61 @@ class MatterTuner:
 
         # Return the trained model
         return TuneOutput(model=lightning_module, trainer=trainer)
+
+
+def load_finetuned_checkpoint(
+    ckpt_path: str,
+    **kwargs: Any,
+):
+    """
+    Load a finetuned checkpoint and return the model.
+    First, parse the ckpt to get model type
+    Then, use .load_from_checkpoint() to load the model
+    """
+    import torch
+
+    from mattertune.backbones import (
+        JMPBackboneModule,
+        MatterSimM3GNetBackboneModule,
+        ORBBackboneModule,
+        EqV2BackboneModule,
+        MACEBackboneModule,
+        UMABackboneModule,
+    )
+
+    ckpt_dict = torch.load(ckpt_path, weights_only=False)
+    name = ckpt_dict.get("hyper_parameters", {}).get("name", None)
+    if name is None:
+        raise ValueError(
+            "Could not find model name in checkpoint hyper_parameters. Please ensure the checkpoint was saved using MatterTune.")
+
+    match name:
+        case "mattersim":
+            return MatterSimM3GNetBackboneModule.load_from_checkpoint(ckpt_path, **kwargs)
+        case "mace":
+            return MACEBackboneModule.load_from_checkpoint(ckpt_path, **kwargs)
+        case "orb":
+            return ORBBackboneModule.load_from_checkpoint(ckpt_path, **kwargs)
+        case "jmp":
+            return JMPBackboneModule.load_from_checkpoint(ckpt_path, **kwargs)
+        case "eqV2":
+            return EqV2BackboneModule.load_from_checkpoint(ckpt_path, **kwargs)
+        case "uma":
+            return UMABackboneModule.load_from_checkpoint(ckpt_path, **kwargs)
+        case _:
+            raise ValueError(f"Unknown model name '{name}' in checkpoint.")
+
+
+def load_pretrained_model(
+    model_config: ModelConfig,
+    device: str | int | torch.device = "cuda",
+):
+    import mattertune.configs as MC
+
+    model_config.optimizer = MC.AdamWConfig(lr=1.0e-4)
+    energy = MC.EnergyPropertyConfig(
+        loss=MC.MSELossConfig(), loss_coefficient=1.0)
+    model_config.properties = [energy]
+    model = model_config.create_model()
+    model.to(device)
+    return model
