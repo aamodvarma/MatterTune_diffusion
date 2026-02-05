@@ -211,6 +211,12 @@ class PerAtomReferencingNormalizerConfig(NormalizerConfigBase):
                     int(k): v for k, v in per_atom_references.items()
                 }
             return per_atom_references
+        
+    @override
+    def __post_init__(self):
+        super().__post_init__()
+        # Validate that the references can be converted to a dict
+        self.per_atom_references = self._references_as_dict()
 
     @override
     def create_normalizer_module(self) -> NormalizerModule:
