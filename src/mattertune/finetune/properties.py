@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Annotated, Literal
+from types import SimpleNamespace
 
 import nshconfig as C
 import numpy as np
@@ -32,6 +33,49 @@ ASECalculatorPropertyName = TypeAliasType(
         "magmoms",
     ],
 )
+
+class PropertyKeys:
+    energy  = "energy"
+    forces  = "forces"
+    stress  = "stress"
+    dipole  = "dipole"
+    charges = "charges"
+    magmom  = "magmom"
+    magmoms = "magmoms"
+
+    _ALIASES = {
+        "e": energy,
+        "pe": energy,
+        "f": forces,
+        "force": forces,
+        "s": stress,
+        "q": charges,
+        "m": magmom,
+        "mm": magmoms,
+    }
+
+    @classmethod
+    def normalize(cls, name: str) -> str:
+        n = name.strip()
+        if hasattr(cls, n):
+            return getattr(cls, n)
+        k = n.lower()
+        if k in cls._ALIASES:
+            return cls._ALIASES[k]
+        raise ValueError(f"Invalid property key: {name}")
+
+    @classmethod
+    def is_valid(cls, key: str) -> bool:
+        return key in cls.all()
+
+    @classmethod
+    def all(cls) -> set[str]:
+        return {
+            cls.energy, cls.forces, cls.stress, cls.dipole,
+            cls.charges, cls.magmom, cls.magmoms
+        }
+
+P = PropertyKeys
 
 
 class PropertyConfigBase(C.Config, ABC):

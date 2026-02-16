@@ -13,7 +13,7 @@ from mattertune.normalization import compute_per_atom_references
 
 nu.pretty()
 
-xyz_path = "./data/water_1000_eVAng.xyz"
+xyz_path = "../../../workspace/AFMDistill/examples/distill_from_mt/data/h2o_1593_train_25.xyz"
 
 dataset_config = MC.XYZDatasetConfig(src=xyz_path)
 dataset = dataset_config.create_dataset()
