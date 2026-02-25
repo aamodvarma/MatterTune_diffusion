@@ -139,7 +139,7 @@ def main(args_dict: dict):
         hparams.trainer.loggers = [
             WandbLoggerConfig(
                 project="MatterTune-Matbench-FoldX",
-                name=f"{args_dict['model_type']}-{args_dict['task']}-fold{fold_idx}-{args_dict['normalize_method']}",
+                name=f"{args_dict['model_type']}-{args_dict['task']}-fold{fold_idx}",
                 offline=False,
             )
         ]
@@ -264,14 +264,15 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model_type", type=str, default="jmp", choices=["jmp", "orb", "eqv2"]
+        "--model_type", type=str, default="orb", choices=["jmp", "orb", "eqv2"]
     )
     parser.add_argument("--fold_index", type=int, default=0)
     parser.add_argument("--freeze_backbone", action="store_true")
-    parser.add_argument("--task", type=str, default="matbench_dielectric")
+    parser.add_argument("--task", type=str, default="matbench_mp_gap")
+    # parser.add_argument("--task", type=str, default="matbench_dielectric")
     parser.add_argument("--property_reduction", type=str, default="mean")
     parser.add_argument("--train_split", type=float, default=0.9)
-    parser.add_argument("--batch_size", type=int, default=6)
+    parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--lr", type=float, default=8.0e-5)
     parser.add_argument(
         "--lr_scheduler",
@@ -280,7 +281,7 @@ if __name__ == "__main__":
         choices=["cosine", "warmup-cosine", "rlp"],
     )
     parser.add_argument("--max_epochs", type=int, default=500)
-    parser.add_argument("--devices", type=int, nargs="+", default=[0, 1, 2, 3])
+    parser.add_argument("--devices", type=int, nargs="+", default=[1, 2, 3])
     parser.add_argument("--ema_decay", type=float, default=0.99)
     parser.add_argument("--load_best_ckpt", action="store_true")
     parser.add_argument("--skip_tuning", action="store_true")

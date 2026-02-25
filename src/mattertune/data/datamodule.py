@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 from abc import ABC, abstractmethod
 from collections.abc import Iterable, Mapping, Sized
+from pathlib import Path
 from typing import TYPE_CHECKING, Annotated, Any, Literal
 
 import ase
@@ -20,6 +21,42 @@ if TYPE_CHECKING:
     from ..finetune.loader import DataLoaderKwargs
 
 log = logging.getLogger(__name__)
+
+
+def _to_lightweight_hparams(value: Any) -> Any:
+    """Convert configs to a logger/checkpoint-friendly representation."""
+    if isinstance(value, C.Config):
+        result: dict[str, Any] = {
+            "__config_class__": value.__class__.__name__,
+        }
+        for field_name in type(value).model_fields:
+            field_value = getattr(value, field_name)
+            if field_name == "atoms_list" and isinstance(field_value, list):
+                result[field_name] = (
+                    f"<omitted {len(field_value)} ase.Atoms objects>"
+                )
+                continue
+            result[field_name] = _to_lightweight_hparams(field_value)
+        return result
+
+    if isinstance(value, Path):
+        return str(value)
+
+    if isinstance(value, ase.Atoms):
+        return "<omitted ase.Atoms>"
+
+    if isinstance(value, Mapping):
+        return {str(k): _to_lightweight_hparams(v) for k, v in value.items()}
+
+    if isinstance(value, list):
+        if value and isinstance(value[0], ase.Atoms):
+            return f"<omitted {len(value)} ase.Atoms objects>"
+        return [_to_lightweight_hparams(v) for v in value]
+
+    if isinstance(value, tuple):
+        return [_to_lightweight_hparams(v) for v in value]
+
+    return value
 
 
 class DatasetMapping(TypedDict, total=False):
@@ -180,8 +217,7 @@ DataModuleConfig = TypeAliasType(
 
 
 class MatterTuneDataModule(LightningDataModule):
-    hparams: DataModuleConfig  # pyright: ignore[reportIncompatibleMethodOverride]
-    hparams_initial: DataModuleConfig  # pyright: ignore[reportIncompatibleMethodOverride]
+    config: DataModuleConfig
 
     @override
     def __init__(self, hparams: DataModuleConfig | Mapping[str, Any]):
@@ -191,19 +227,22 @@ class MatterTuneDataModule(LightningDataModule):
 
         super().__init__()
 
-        # Save the configuration for Lightning.
-        self.save_hyperparameters(hparams)
+        # Keep full runtime config here (can include non-serializable/heavy objects).
+        self.config = hparams
+
+        # Save only a lightweight representation for Lightning checkpoint/logging.
+        self.save_hyperparameters({"config": _to_lightweight_hparams(hparams)})
 
     @override
     def prepare_data(self) -> None:
-        for config in self.hparams.dataset_configs():
+        for config in self.config.dataset_configs():
             config.prepare_data()
 
     @override
     def setup(self, stage: str):
         super().setup(stage)
 
-        self.datasets = self.hparams.create_datasets()
+        self.datasets = self.config.create_datasets()
 
         # PyTorch Lightning checks for the *existence* of the
         # `train_dataloader`, `val_dataloader`, `test_dataloader`,
@@ -245,7 +284,7 @@ class MatterTuneDataModule(LightningDataModule):
         return self.lightning_module.create_dataloader(
             dataset,
             has_labels=True,
-            **self.hparams.dataloader_kwargs(),
+            **self.config.dataloader_kwargs(),
         )
 
     @override
@@ -258,5 +297,5 @@ class MatterTuneDataModule(LightningDataModule):
         return self.lightning_module.create_dataloader(
             dataset,
             has_labels=True,
-            **self.hparams.dataloader_kwargs(),
+            **self.config.dataloader_kwargs(),
         )
