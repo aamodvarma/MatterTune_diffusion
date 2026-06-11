@@ -1,1372 +1,0 @@
-/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
-  _C._set_float32_matmul_precision(precision)
-/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/orb_models/utils.py:30: UserWarning: Setting global torch default dtype to torch.float32.
-  warnings.warn(f"Setting global torch default dtype to {torch_dtype}.")
-Returning model without loading pretrained weights
-/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3 pretrain.py ...
-wandb: Currently logged in as: aamodvarma to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-wandb: setting up run xnmfss04
-wandb: Tracking run with wandb version 0.22.3
-wandb: Run data is saved locally in ./wandb/run-20260606_133314-xnmfss04
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run Pretrain-diffusion-orb-v2
-wandb: ⭐️ View project at https://wandb.ai/aamodvarma/Diffusion-Pretraining-Orb-v2-VP
-wandb: 🚀 View run at https://wandb.ai/aamodvarma/Diffusion-Pretraining-Orb-v2-VP/runs/xnmfss04
-/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/callbacks/model_checkpoint.py:751: Checkpoint directory /global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/checkpoints exists and is not empty.
-/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:433: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=243` in the `DataLoader` to improve performance.
-Training: |          | 0/? [00:00<?, ?it/s]Training: |          | 0/? [00:00<?, ?it/s]Epoch 0:   0%|          | 0/1563 [00:00<?, ?it/s]
-
-Pred mean/std: -0.36343676 0.50339144
-Epoch 0:   0%|          | 1/1563 [00:05<2:26:43,  0.18it/s]Epoch 0:   0%|          | 1/1563 [00:05<2:26:45,  0.18it/s, v_num=ss04]
-
-Pred mean/std: 2.677404 2.4068165
-Epoch 0:   0%|          | 2/1563 [00:08<1:54:54,  0.23it/s, v_num=ss04]Epoch 0:   0%|          | 2/1563 [00:08<1:54:55,  0.23it/s, v_num=ss04]
-
-Pred mean/std: 0.94034344 0.6966257
-Epoch 0:   0%|          | 3/1563 [00:11<1:42:18,  0.25it/s, v_num=ss04]Epoch 0:   0%|          | 3/1563 [00:11<1:42:19,  0.25it/s, v_num=ss04]
-
-Pred mean/std: -0.96374804 0.8435044
-Epoch 0:   0%|          | 4/1563 [00:14<1:32:10,  0.28it/s, v_num=ss04]Epoch 0:   0%|          | 4/1563 [00:14<1:32:10,  0.28it/s, v_num=ss04]
-
-Pred mean/std: -0.55279267 0.51720834
-Epoch 0:   0%|          | 5/1563 [00:17<1:28:43,  0.29it/s, v_num=ss04]Epoch 0:   0%|          | 5/1563 [00:17<1:28:44,  0.29it/s, v_num=ss04]
-
-Pred mean/std: 0.28529558 0.37966865
-Epoch 0:   0%|          | 6/1563 [00:19<1:25:40,  0.30it/s, v_num=ss04]Epoch 0:   0%|          | 6/1563 [00:19<1:25:40,  0.30it/s, v_num=ss04]
-
-Pred mean/std: 0.42033154 0.23077166
-Epoch 0:   0%|          | 7/1563 [00:22<1:22:21,  0.31it/s, v_num=ss04]Epoch 0:   0%|          | 7/1563 [00:22<1:22:21,  0.31it/s, v_num=ss04]
-
-Pred mean/std: -0.081838734 0.15495972
-Epoch 0:   1%|          | 8/1563 [00:24<1:20:33,  0.32it/s, v_num=ss04]Epoch 0:   1%|          | 8/1563 [00:24<1:20:34,  0.32it/s, v_num=ss04]
-
-Pred mean/std: -0.050166883 0.46506536
-Epoch 0:   1%|          | 9/1563 [00:27<1:18:07,  0.33it/s, v_num=ss04]Epoch 0:   1%|          | 9/1563 [00:27<1:18:07,  0.33it/s, v_num=ss04]
-
-Pred mean/std: 0.006456896 0.2586906
-Epoch 0:   1%|          | 10/1563 [00:29<1:17:02,  0.34it/s, v_num=ss04]Epoch 0:   1%|          | 10/1563 [00:29<1:17:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.067788154 0.5321069
-Epoch 0:   1%|          | 11/1563 [00:32<1:17:27,  0.33it/s, v_num=ss04]Epoch 0:   1%|          | 11/1563 [00:32<1:17:27,  0.33it/s, v_num=ss04]
-
-Pred mean/std: -0.032335483 0.5693922
-Epoch 0:   1%|          | 12/1563 [00:36<1:18:18,  0.33it/s, v_num=ss04]Epoch 0:   1%|          | 12/1563 [00:36<1:18:18,  0.33it/s, v_num=ss04]
-
-Pred mean/std: 0.086469844 0.22350718
-Epoch 0:   1%|          | 13/1563 [00:39<1:18:54,  0.33it/s, v_num=ss04]Epoch 0:   1%|          | 13/1563 [00:39<1:18:54,  0.33it/s, v_num=ss04]
-
-Pred mean/std: 0.093861684 0.41369835
-Epoch 0:   1%|          | 14/1563 [00:42<1:18:26,  0.33it/s, v_num=ss04]Epoch 0:   1%|          | 14/1563 [00:42<1:18:26,  0.33it/s, v_num=ss04]
-
-Pred mean/std: 0.00017301556 0.52623653
-Epoch 0:   1%|          | 15/1563 [00:44<1:16:59,  0.34it/s, v_num=ss04]Epoch 0:   1%|          | 15/1563 [00:44<1:17:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.09425026 0.32654908
-Epoch 0:   1%|          | 16/1563 [00:47<1:16:33,  0.34it/s, v_num=ss04]Epoch 0:   1%|          | 16/1563 [00:47<1:16:33,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.12707615 0.14629145
-Epoch 0:   1%|          | 17/1563 [00:50<1:16:07,  0.34it/s, v_num=ss04]Epoch 0:   1%|          | 17/1563 [00:50<1:16:07,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.03186915 0.28277406
-Epoch 0:   1%|          | 18/1563 [00:53<1:16:10,  0.34it/s, v_num=ss04]Epoch 0:   1%|          | 18/1563 [00:53<1:16:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.22115725 0.1998712
-Epoch 0:   1%|          | 19/1563 [00:56<1:16:03,  0.34it/s, v_num=ss04]Epoch 0:   1%|          | 19/1563 [00:56<1:16:03,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.16685879 0.10547796
-Epoch 0:   1%|▏         | 20/1563 [00:58<1:15:35,  0.34it/s, v_num=ss04]Epoch 0:   1%|▏         | 20/1563 [00:58<1:15:35,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.09828501 0.16825795
-Epoch 0:   1%|▏         | 21/1563 [01:01<1:15:07,  0.34it/s, v_num=ss04]Epoch 0:   1%|▏         | 21/1563 [01:01<1:15:07,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.19080548 0.14864567
-Epoch 0:   1%|▏         | 22/1563 [01:04<1:14:58,  0.34it/s, v_num=ss04]Epoch 0:   1%|▏         | 22/1563 [01:04<1:14:58,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.13142744 0.11578893
-Epoch 0:   1%|▏         | 23/1563 [01:06<1:14:38,  0.34it/s, v_num=ss04]Epoch 0:   1%|▏         | 23/1563 [01:06<1:14:38,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.02901214 0.10755191
-Epoch 0:   2%|▏         | 24/1563 [01:09<1:14:38,  0.34it/s, v_num=ss04]Epoch 0:   2%|▏         | 24/1563 [01:09<1:14:38,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.16041455 0.06951641
-Epoch 0:   2%|▏         | 25/1563 [01:12<1:14:30,  0.34it/s, v_num=ss04]Epoch 0:   2%|▏         | 25/1563 [01:12<1:14:30,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.1061555 0.084085174
-Epoch 0:   2%|▏         | 26/1563 [01:14<1:13:50,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 26/1563 [01:14<1:13:50,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.067067474 0.13933736
-Epoch 0:   2%|▏         | 27/1563 [01:17<1:13:47,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 27/1563 [01:17<1:13:47,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.12075426 0.066894
-Epoch 0:   2%|▏         | 28/1563 [01:20<1:13:32,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 28/1563 [01:20<1:13:32,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.04396663 0.19191091
-Epoch 0:   2%|▏         | 29/1563 [01:24<1:14:05,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 29/1563 [01:24<1:14:05,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.013342978 0.15767068
-Epoch 0:   2%|▏         | 30/1563 [01:26<1:13:50,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 30/1563 [01:26<1:13:50,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.0354659 0.15253462
-Epoch 0:   2%|▏         | 31/1563 [01:29<1:13:47,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 31/1563 [01:29<1:13:47,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.02519164 0.18002112
-Epoch 0:   2%|▏         | 32/1563 [01:32<1:13:54,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 32/1563 [01:32<1:13:54,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.039436888 0.15126397
-Epoch 0:   2%|▏         | 33/1563 [01:35<1:13:52,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 33/1563 [01:35<1:13:52,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.04132135 0.14435787
-Epoch 0:   2%|▏         | 34/1563 [01:38<1:13:40,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 34/1563 [01:38<1:13:40,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.017147766 0.07793289
-Epoch 0:   2%|▏         | 35/1563 [01:41<1:13:35,  0.35it/s, v_num=ss04]Epoch 0:   2%|▏         | 35/1563 [01:41<1:13:35,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.0457958 0.09964894
-Epoch 0:   2%|▏         | 36/1563 [01:44<1:13:48,  0.34it/s, v_num=ss04]Epoch 0:   2%|▏         | 36/1563 [01:44<1:13:48,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.050442435 0.07969471
-Epoch 0:   2%|▏         | 37/1563 [01:47<1:13:48,  0.34it/s, v_num=ss04]Epoch 0:   2%|▏         | 37/1563 [01:47<1:13:48,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.017517986 0.07772443
-Epoch 0:   2%|▏         | 38/1563 [01:50<1:13:41,  0.34it/s, v_num=ss04]Epoch 0:   2%|▏         | 38/1563 [01:50<1:13:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.04541795 0.12661561
-Epoch 0:   2%|▏         | 39/1563 [01:53<1:13:40,  0.34it/s, v_num=ss04]Epoch 0:   2%|▏         | 39/1563 [01:53<1:13:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0958308 0.10337856
-Epoch 0:   3%|▎         | 40/1563 [01:56<1:13:50,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 40/1563 [01:56<1:13:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.079098895 0.08617702
-Epoch 0:   3%|▎         | 41/1563 [01:59<1:13:42,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 41/1563 [01:59<1:13:42,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0081383735 0.08578748
-Epoch 0:   3%|▎         | 42/1563 [02:02<1:13:48,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 42/1563 [02:02<1:13:48,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.07470168 0.095412955
-Epoch 0:   3%|▎         | 43/1563 [02:04<1:13:33,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 43/1563 [02:04<1:13:33,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.07321991 0.08291776
-Epoch 0:   3%|▎         | 44/1563 [02:08<1:13:46,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 44/1563 [02:08<1:13:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0047442988 0.112731494
-Epoch 0:   3%|▎         | 45/1563 [02:10<1:13:36,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 45/1563 [02:10<1:13:36,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.03685538 0.07829131
-Epoch 0:   3%|▎         | 46/1563 [02:14<1:13:42,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 46/1563 [02:14<1:13:42,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.020798307 0.13296986
-Epoch 0:   3%|▎         | 47/1563 [02:16<1:13:34,  0.34it/s, v_num=ss04]Epoch 0:   3%|▎         | 47/1563 [02:16<1:13:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.015719017 0.1449152
-Epoch 0:   3%|▎         | 48/1563 [02:19<1:13:07,  0.35it/s, v_num=ss04]Epoch 0:   3%|▎         | 48/1563 [02:19<1:13:07,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.014097565 0.07162609
-Epoch 0:   3%|▎         | 49/1563 [02:21<1:12:55,  0.35it/s, v_num=ss04]Epoch 0:   3%|▎         | 49/1563 [02:21<1:12:55,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.0021787 0.095091194
-Epoch 0:   3%|▎         | 50/1563 [02:24<1:12:54,  0.35it/s, v_num=ss04]Epoch 0:   3%|▎         | 50/1563 [02:24<1:12:54,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.028928773 0.08691267
-Epoch 0:   3%|▎         | 51/1563 [02:27<1:12:41,  0.35it/s, v_num=ss04]Epoch 0:   3%|▎         | 51/1563 [02:27<1:12:41,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.05081471 0.04413693
-Epoch 0:   3%|▎         | 52/1563 [02:29<1:12:26,  0.35it/s, v_num=ss04]Epoch 0:   3%|▎         | 52/1563 [02:29<1:12:26,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.00836654 0.089780584
-Epoch 0:   3%|▎         | 53/1563 [02:33<1:12:56,  0.35it/s, v_num=ss04]Epoch 0:   3%|▎         | 53/1563 [02:33<1:12:56,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.05271973 0.047838032
-Epoch 0:   3%|▎         | 54/1563 [02:36<1:12:50,  0.35it/s, v_num=ss04]Epoch 0:   3%|▎         | 54/1563 [02:36<1:12:50,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.02760494 0.06940461
-Epoch 0:   4%|▎         | 55/1563 [02:38<1:12:36,  0.35it/s, v_num=ss04]Epoch 0:   4%|▎         | 55/1563 [02:38<1:12:36,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.004918643 0.045733128
-Epoch 0:   4%|▎         | 56/1563 [02:41<1:12:15,  0.35it/s, v_num=ss04]Epoch 0:   4%|▎         | 56/1563 [02:41<1:12:15,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.05280561 0.07263742
-Epoch 0:   4%|▎         | 57/1563 [02:44<1:12:18,  0.35it/s, v_num=ss04]Epoch 0:   4%|▎         | 57/1563 [02:44<1:12:18,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.04972184 0.065665305
-Epoch 0:   4%|▎         | 58/1563 [02:47<1:12:19,  0.35it/s, v_num=ss04]Epoch 0:   4%|▎         | 58/1563 [02:47<1:12:19,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.008294203 0.057556733
-Epoch 0:   4%|▍         | 59/1563 [02:50<1:12:17,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 59/1563 [02:50<1:12:17,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.050601367 0.10005186
-Epoch 0:   4%|▍         | 60/1563 [02:52<1:12:10,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 60/1563 [02:52<1:12:10,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.05647777 0.06404928
-Epoch 0:   4%|▍         | 61/1563 [02:55<1:12:03,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 61/1563 [02:55<1:12:03,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.0012624895 0.12198828
-Epoch 0:   4%|▍         | 62/1563 [02:59<1:12:13,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 62/1563 [02:59<1:12:13,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.030940518 0.11906145
-Epoch 0:   4%|▍         | 63/1563 [03:02<1:12:17,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 63/1563 [03:02<1:12:17,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.031934455 0.04554578
-Epoch 0:   4%|▍         | 64/1563 [03:05<1:12:14,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 64/1563 [03:05<1:12:14,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.021210851 0.12718242
-Epoch 0:   4%|▍         | 65/1563 [03:08<1:12:18,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 65/1563 [03:08<1:12:18,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.0365429 0.12991749
-Epoch 0:   4%|▍         | 66/1563 [03:11<1:12:21,  0.34it/s, v_num=ss04]Epoch 0:   4%|▍         | 66/1563 [03:11<1:12:21,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.029776052 0.089862004
-Epoch 0:   4%|▍         | 67/1563 [03:14<1:12:23,  0.34it/s, v_num=ss04]Epoch 0:   4%|▍         | 67/1563 [03:14<1:12:23,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.002172545 0.0964109
-Epoch 0:   4%|▍         | 68/1563 [03:17<1:12:14,  0.34it/s, v_num=ss04]Epoch 0:   4%|▍         | 68/1563 [03:17<1:12:14,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0028051485 0.10146496
-Epoch 0:   4%|▍         | 69/1563 [03:20<1:12:13,  0.34it/s, v_num=ss04]Epoch 0:   4%|▍         | 69/1563 [03:20<1:12:13,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0015061365 0.101409726
-Epoch 0:   4%|▍         | 70/1563 [03:22<1:12:04,  0.35it/s, v_num=ss04]Epoch 0:   4%|▍         | 70/1563 [03:22<1:12:04,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.01213126 0.0440036
-Epoch 0:   5%|▍         | 71/1563 [03:25<1:12:00,  0.35it/s, v_num=ss04]Epoch 0:   5%|▍         | 71/1563 [03:25<1:12:00,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.017918399 0.12513193
-Epoch 0:   5%|▍         | 72/1563 [03:28<1:11:56,  0.35it/s, v_num=ss04]Epoch 0:   5%|▍         | 72/1563 [03:28<1:11:56,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.0027039105 0.118794404
-Epoch 0:   5%|▍         | 73/1563 [03:31<1:11:57,  0.35it/s, v_num=ss04]Epoch 0:   5%|▍         | 73/1563 [03:31<1:11:57,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.017841237 0.044001196
-Epoch 0:   5%|▍         | 74/1563 [03:34<1:11:52,  0.35it/s, v_num=ss04]Epoch 0:   5%|▍         | 74/1563 [03:34<1:11:52,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.0038266892 0.06875434
-Epoch 0:   5%|▍         | 75/1563 [03:36<1:11:40,  0.35it/s, v_num=ss04]Epoch 0:   5%|▍         | 75/1563 [03:36<1:11:40,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.0057445294 0.054584146
-Epoch 0:   5%|▍         | 76/1563 [03:40<1:11:48,  0.35it/s, v_num=ss04]Epoch 0:   5%|▍         | 76/1563 [03:40<1:11:48,  0.35it/s, v_num=ss04]
-
-Pred mean/std: -0.02051077 0.05805802
-Epoch 0:   5%|▍         | 77/1563 [03:42<1:11:41,  0.35it/s, v_num=ss04]Epoch 0:   5%|▍         | 77/1563 [03:42<1:11:41,  0.35it/s, v_num=ss04]
-
-Pred mean/std: 0.006690189 0.08856424
-Epoch 0:   5%|▍         | 78/1563 [03:46<1:11:58,  0.34it/s, v_num=ss04]Epoch 0:   5%|▍         | 78/1563 [03:46<1:11:58,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.008359186 0.06818379
-Epoch 0:   5%|▌         | 79/1563 [03:49<1:11:52,  0.34it/s, v_num=ss04]Epoch 0:   5%|▌         | 79/1563 [03:49<1:11:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.004576746 0.066696964
-Epoch 0:   5%|▌         | 80/1563 [03:52<1:11:47,  0.34it/s, v_num=ss04]Epoch 0:   5%|▌         | 80/1563 [03:52<1:11:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 1.0801889e-05 0.07020839
-Epoch 0:   5%|▌         | 81/1563 [03:55<1:11:44,  0.34it/s, v_num=ss04]Epoch 0:   5%|▌         | 81/1563 [03:55<1:11:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.009535913 0.053980883
-Epoch 0:   5%|▌         | 82/1563 [03:58<1:11:44,  0.34it/s, v_num=ss04]Epoch 0:   5%|▌         | 82/1563 [03:58<1:11:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0044015553 0.06589406
-Epoch 0:   5%|▌         | 83/1563 [04:00<1:11:31,  0.34it/s, v_num=ss04]Epoch 0:   5%|▌         | 83/1563 [04:00<1:11:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.010111862 0.053946927
-Epoch 0:   5%|▌         | 84/1563 [04:04<1:11:50,  0.34it/s, v_num=ss04]Epoch 0:   5%|▌         | 84/1563 [04:04<1:11:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.01143122 0.063682534
-Epoch 0:   5%|▌         | 85/1563 [04:08<1:12:04,  0.34it/s, v_num=ss04]Epoch 0:   5%|▌         | 85/1563 [04:08<1:12:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0062820087 0.06699584
-Epoch 0:   6%|▌         | 86/1563 [04:12<1:12:15,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 86/1563 [04:12<1:12:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0032473046 0.06204268
-Epoch 0:   6%|▌         | 87/1563 [04:15<1:12:07,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 87/1563 [04:15<1:12:07,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.02330788 0.06305631
-Epoch 0:   6%|▌         | 88/1563 [04:18<1:12:08,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 88/1563 [04:18<1:12:08,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.009965547 0.057649277
-Epoch 0:   6%|▌         | 89/1563 [04:21<1:12:06,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 89/1563 [04:21<1:12:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.027171351 0.04879054
-Epoch 0:   6%|▌         | 90/1563 [04:24<1:12:03,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 90/1563 [04:24<1:12:03,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.01364649 0.057454202
-Epoch 0:   6%|▌         | 91/1563 [04:27<1:12:01,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 91/1563 [04:27<1:12:01,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.007734401 0.04821068
-Epoch 0:   6%|▌         | 92/1563 [04:30<1:12:01,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 92/1563 [04:30<1:12:01,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.010431264 0.06052401
-Epoch 0:   6%|▌         | 93/1563 [04:33<1:12:00,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 93/1563 [04:33<1:12:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.010855731 0.054918174
-Epoch 0:   6%|▌         | 94/1563 [04:35<1:11:51,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 94/1563 [04:35<1:11:51,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0063377745 0.060746685
-Epoch 0:   6%|▌         | 95/1563 [04:39<1:12:02,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 95/1563 [04:39<1:12:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.006048427 0.052354068
-Epoch 0:   6%|▌         | 96/1563 [04:42<1:12:04,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 96/1563 [04:42<1:12:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.015439118 0.06960372
-Epoch 0:   6%|▌         | 97/1563 [04:45<1:11:52,  0.34it/s, v_num=ss04]Epoch 0:   6%|▌         | 97/1563 [04:45<1:11:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0033141165 0.06189819
-Epoch 0:   6%|▋         | 98/1563 [04:48<1:11:56,  0.34it/s, v_num=ss04]Epoch 0:   6%|▋         | 98/1563 [04:48<1:11:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.023297012 0.089107536
-Epoch 0:   6%|▋         | 99/1563 [04:51<1:11:51,  0.34it/s, v_num=ss04]Epoch 0:   6%|▋         | 99/1563 [04:51<1:11:51,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.019002499 0.07896112
-Epoch 0:   6%|▋         | 100/1563 [04:55<1:11:56,  0.34it/s, v_num=ss04]Epoch 0:   6%|▋         | 100/1563 [04:55<1:11:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.010029106 0.050631776
-Epoch 0:   6%|▋         | 101/1563 [04:57<1:11:49,  0.34it/s, v_num=ss04]Epoch 0:   6%|▋         | 101/1563 [04:57<1:11:49,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012153179 0.060057662
-Epoch 0:   7%|▋         | 102/1563 [05:01<1:11:55,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 102/1563 [05:01<1:11:55,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0077743386 0.07081038
-Epoch 0:   7%|▋         | 103/1563 [05:03<1:11:47,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 103/1563 [05:03<1:11:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.005167593 0.05630907
-Epoch 0:   7%|▋         | 104/1563 [05:06<1:11:45,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 104/1563 [05:06<1:11:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0038088528 0.07739884
-Epoch 0:   7%|▋         | 105/1563 [05:09<1:11:41,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 105/1563 [05:09<1:11:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0063861185 0.08060352
-Epoch 0:   7%|▋         | 106/1563 [05:13<1:11:43,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 106/1563 [05:13<1:11:43,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.008465312 0.06251632
-Epoch 0:   7%|▋         | 107/1563 [05:15<1:11:34,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 107/1563 [05:15<1:11:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0012183777 0.056066666
-Epoch 0:   7%|▋         | 108/1563 [05:18<1:11:28,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 108/1563 [05:18<1:11:28,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0082139205 0.0654187
-Epoch 0:   7%|▋         | 109/1563 [05:21<1:11:33,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 109/1563 [05:21<1:11:33,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.00017883135 0.061953012
-Epoch 0:   7%|▋         | 110/1563 [05:25<1:11:41,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 110/1563 [05:25<1:11:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012681974 0.06393511
-Epoch 0:   7%|▋         | 111/1563 [05:28<1:11:34,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 111/1563 [05:28<1:11:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.013140103 0.06403881
-Epoch 0:   7%|▋         | 112/1563 [05:30<1:11:23,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 112/1563 [05:30<1:11:23,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.020918833 0.06508877
-Epoch 0:   7%|▋         | 113/1563 [05:33<1:11:16,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 113/1563 [05:33<1:11:16,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.01359808 0.05909484
-Epoch 0:   7%|▋         | 114/1563 [05:36<1:11:11,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 114/1563 [05:36<1:11:11,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.015339391 0.07075219
-Epoch 0:   7%|▋         | 115/1563 [05:39<1:11:10,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 115/1563 [05:39<1:11:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.022244908 0.07506572
-Epoch 0:   7%|▋         | 116/1563 [05:42<1:11:07,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 116/1563 [05:42<1:11:07,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.014827351 0.049529705
-Epoch 0:   7%|▋         | 117/1563 [05:45<1:11:09,  0.34it/s, v_num=ss04]Epoch 0:   7%|▋         | 117/1563 [05:45<1:11:09,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0033306666 0.04631054
-Epoch 0:   8%|▊         | 118/1563 [05:48<1:11:01,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 118/1563 [05:48<1:11:01,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.005805642 0.08334962
-Epoch 0:   8%|▊         | 119/1563 [05:51<1:11:07,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 119/1563 [05:51<1:11:07,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012186965 0.066433385
-Epoch 0:   8%|▊         | 120/1563 [05:54<1:10:58,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 120/1563 [05:54<1:10:58,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.010821557 0.0626571
-Epoch 0:   8%|▊         | 121/1563 [05:57<1:10:59,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 121/1563 [05:57<1:10:59,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0028996572 0.06653549
-Epoch 0:   8%|▊         | 122/1563 [06:00<1:10:55,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 122/1563 [06:00<1:10:55,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.017052945 0.067889415
-Epoch 0:   8%|▊         | 123/1563 [06:03<1:10:59,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 123/1563 [06:03<1:10:59,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.011279354 0.066458635
-Epoch 0:   8%|▊         | 124/1563 [06:07<1:10:59,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 124/1563 [06:07<1:10:59,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.023467494 0.065077476
-Epoch 0:   8%|▊         | 125/1563 [06:09<1:10:53,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 125/1563 [06:09<1:10:53,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.015210332 0.06395708
-Epoch 0:   8%|▊         | 126/1563 [06:12<1:10:47,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 126/1563 [06:12<1:10:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012865888 0.06013737
-Epoch 0:   8%|▊         | 127/1563 [06:15<1:10:44,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 127/1563 [06:15<1:10:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0153990155 0.062461026
-Epoch 0:   8%|▊         | 128/1563 [06:18<1:10:44,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 128/1563 [06:18<1:10:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.013420226 0.073507085
-Epoch 0:   8%|▊         | 129/1563 [06:21<1:10:38,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 129/1563 [06:21<1:10:38,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.022039864 0.072712645
-Epoch 0:   8%|▊         | 130/1563 [06:24<1:10:36,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 130/1563 [06:24<1:10:36,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.005123866 0.08620426
-Epoch 0:   8%|▊         | 131/1563 [06:27<1:10:38,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 131/1563 [06:27<1:10:38,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.022294775 0.075463384
-Epoch 0:   8%|▊         | 132/1563 [06:30<1:10:31,  0.34it/s, v_num=ss04]Epoch 0:   8%|▊         | 132/1563 [06:30<1:10:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0031156838 0.09886781
-Epoch 0:   9%|▊         | 133/1563 [06:33<1:10:27,  0.34it/s, v_num=ss04]Epoch 0:   9%|▊         | 133/1563 [06:33<1:10:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0056999507 0.097706296
-Epoch 0:   9%|▊         | 134/1563 [06:36<1:10:24,  0.34it/s, v_num=ss04]Epoch 0:   9%|▊         | 134/1563 [06:36<1:10:24,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.007643874 0.07826374
-Epoch 0:   9%|▊         | 135/1563 [06:39<1:10:22,  0.34it/s, v_num=ss04]Epoch 0:   9%|▊         | 135/1563 [06:39<1:10:22,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0033367306 0.072874896
-Epoch 0:   9%|▊         | 136/1563 [06:42<1:10:19,  0.34it/s, v_num=ss04]Epoch 0:   9%|▊         | 136/1563 [06:42<1:10:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0052794404 0.09004361
-Epoch 0:   9%|▉         | 137/1563 [06:45<1:10:19,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 137/1563 [06:45<1:10:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.013837215 0.08637197
-Epoch 0:   9%|▉         | 138/1563 [06:48<1:10:17,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 138/1563 [06:48<1:10:17,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.011659599 0.094745606
-Epoch 0:   9%|▉         | 139/1563 [06:52<1:10:27,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 139/1563 [06:52<1:10:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0025215794 0.09960949
-Epoch 0:   9%|▉         | 140/1563 [06:55<1:10:21,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 140/1563 [06:55<1:10:21,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.030624244 0.07555482
-Epoch 0:   9%|▉         | 141/1563 [06:58<1:10:19,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 141/1563 [06:58<1:10:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.015652888 0.066313
-Epoch 0:   9%|▉         | 142/1563 [07:01<1:10:15,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 142/1563 [07:01<1:10:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.031146452 0.092131495
-Epoch 0:   9%|▉         | 143/1563 [07:04<1:10:10,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 143/1563 [07:04<1:10:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.03600363 0.086225554
-Epoch 0:   9%|▉         | 144/1563 [07:06<1:10:04,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 144/1563 [07:06<1:10:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.011020361 0.08290888
-Epoch 0:   9%|▉         | 145/1563 [07:10<1:10:06,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 145/1563 [07:10<1:10:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.020696908 0.08387824
-Epoch 0:   9%|▉         | 146/1563 [07:12<1:10:01,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 146/1563 [07:12<1:10:01,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0021121188 0.11142342
-Epoch 0:   9%|▉         | 147/1563 [07:15<1:09:58,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 147/1563 [07:15<1:09:58,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.01351 0.10469932
-Epoch 0:   9%|▉         | 148/1563 [07:17<1:09:45,  0.34it/s, v_num=ss04]Epoch 0:   9%|▉         | 148/1563 [07:17<1:09:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.011978246 0.08595516
-Epoch 0:  10%|▉         | 149/1563 [07:20<1:09:41,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 149/1563 [07:20<1:09:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0059112045 0.085931316
-Epoch 0:  10%|▉         | 150/1563 [07:23<1:09:33,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 150/1563 [07:23<1:09:33,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012716601 0.10831652
-Epoch 0:  10%|▉         | 151/1563 [07:26<1:09:31,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 151/1563 [07:26<1:09:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0057333666 0.10230304
-Epoch 0:  10%|▉         | 152/1563 [07:29<1:09:34,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 152/1563 [07:29<1:09:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0011344115 0.103130594
-Epoch 0:  10%|▉         | 153/1563 [07:32<1:09:26,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 153/1563 [07:32<1:09:26,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.014145209 0.11432047
-Epoch 0:  10%|▉         | 154/1563 [07:35<1:09:23,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 154/1563 [07:35<1:09:23,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.010333621 0.113875024
-Epoch 0:  10%|▉         | 155/1563 [07:37<1:09:14,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 155/1563 [07:37<1:09:14,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.014152009 0.11708893
-Epoch 0:  10%|▉         | 156/1563 [07:39<1:09:08,  0.34it/s, v_num=ss04]Epoch 0:  10%|▉         | 156/1563 [07:39<1:09:08,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.005291651 0.120838664
-Epoch 0:  10%|█         | 157/1563 [07:42<1:09:05,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 157/1563 [07:42<1:09:05,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.010582812 0.12667434
-Epoch 0:  10%|█         | 158/1563 [07:46<1:09:06,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 158/1563 [07:46<1:09:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.009050754 0.1312979
-Epoch 0:  10%|█         | 159/1563 [07:49<1:09:02,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 159/1563 [07:49<1:09:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0027344953 0.13103479
-Epoch 0:  10%|█         | 160/1563 [07:51<1:08:56,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 160/1563 [07:51<1:08:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0024558024 0.11862289
-Epoch 0:  10%|█         | 161/1563 [07:54<1:08:50,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 161/1563 [07:54<1:08:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012512793 0.12648056
-Epoch 0:  10%|█         | 162/1563 [07:57<1:08:52,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 162/1563 [07:57<1:08:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.005754301 0.11966317
-Epoch 0:  10%|█         | 163/1563 [08:01<1:08:52,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 163/1563 [08:01<1:08:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012966845 0.12292822
-Epoch 0:  10%|█         | 164/1563 [08:03<1:08:47,  0.34it/s, v_num=ss04]Epoch 0:  10%|█         | 164/1563 [08:03<1:08:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0017319596 0.14036156
-Epoch 0:  11%|█         | 165/1563 [08:07<1:08:50,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 165/1563 [08:07<1:08:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.027476402 0.13282846
-Epoch 0:  11%|█         | 166/1563 [08:10<1:08:44,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 166/1563 [08:10<1:08:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.00776357 0.13371696
-Epoch 0:  11%|█         | 167/1563 [08:12<1:08:40,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 167/1563 [08:12<1:08:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.01950228 0.1472119
-Epoch 0:  11%|█         | 168/1563 [08:16<1:08:41,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 168/1563 [08:16<1:08:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.01930976 0.15938477
-Epoch 0:  11%|█         | 169/1563 [08:19<1:08:39,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 169/1563 [08:19<1:08:39,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.010631432 0.15312953
-Epoch 0:  11%|█         | 170/1563 [08:22<1:08:40,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 170/1563 [08:22<1:08:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0821776 0.1701324
-Epoch 0:  11%|█         | 171/1563 [08:25<1:08:32,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 171/1563 [08:25<1:08:32,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0023545981 0.18599261
-Epoch 0:  11%|█         | 172/1563 [08:27<1:08:27,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 172/1563 [08:27<1:08:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0793157 0.21556117
-Epoch 0:  11%|█         | 173/1563 [08:30<1:08:21,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 173/1563 [08:30<1:08:21,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.029828476 0.20685256
-Epoch 0:  11%|█         | 174/1563 [08:33<1:08:18,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 174/1563 [08:33<1:08:18,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.05842074 0.19814293
-Epoch 0:  11%|█         | 175/1563 [08:35<1:08:12,  0.34it/s, v_num=ss04]Epoch 0:  11%|█         | 175/1563 [08:35<1:08:12,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0048826905 0.18625098
-Epoch 0:  11%|█▏        | 176/1563 [08:38<1:08:09,  0.34it/s, v_num=ss04]Epoch 0:  11%|█▏        | 176/1563 [08:38<1:08:09,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.038148265 0.1665052
-Epoch 0:  11%|█▏        | 177/1563 [08:41<1:08:03,  0.34it/s, v_num=ss04]Epoch 0:  11%|█▏        | 177/1563 [08:41<1:08:03,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.019455822 0.17241931
-Epoch 0:  11%|█▏        | 178/1563 [08:43<1:07:57,  0.34it/s, v_num=ss04]Epoch 0:  11%|█▏        | 178/1563 [08:43<1:07:57,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.023589762 0.17078723
-Epoch 0:  11%|█▏        | 179/1563 [08:47<1:07:57,  0.34it/s, v_num=ss04]Epoch 0:  11%|█▏        | 179/1563 [08:47<1:07:57,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.002388333 0.16168675
-Epoch 0:  12%|█▏        | 180/1563 [08:49<1:07:50,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 180/1563 [08:49<1:07:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.024555381 0.16320324
-Epoch 0:  12%|█▏        | 181/1563 [08:52<1:07:46,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 181/1563 [08:52<1:07:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0042032395 0.17012866
-Epoch 0:  12%|█▏        | 182/1563 [08:55<1:07:45,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 182/1563 [08:55<1:07:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.027467282 0.16047934
-Epoch 0:  12%|█▏        | 183/1563 [08:58<1:07:39,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 183/1563 [08:58<1:07:39,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.002892847 0.15328741
-Epoch 0:  12%|█▏        | 184/1563 [09:01<1:07:38,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 184/1563 [09:01<1:07:38,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.043912843 0.17195544
-Epoch 0:  12%|█▏        | 185/1563 [09:05<1:07:41,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 185/1563 [09:05<1:07:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.03169039 0.17003076
-Epoch 0:  12%|█▏        | 186/1563 [09:08<1:07:39,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 186/1563 [09:08<1:07:39,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.056921303 0.1760872
-Epoch 0:  12%|█▏        | 187/1563 [09:11<1:07:37,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 187/1563 [09:11<1:07:37,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.06635842 0.17276937
-Epoch 0:  12%|█▏        | 188/1563 [09:14<1:07:32,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 188/1563 [09:14<1:07:32,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.004389172 0.17544615
-Epoch 0:  12%|█▏        | 189/1563 [09:16<1:07:26,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 189/1563 [09:16<1:07:26,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.06728915 0.18475449
-Epoch 0:  12%|█▏        | 190/1563 [09:19<1:07:20,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 190/1563 [09:19<1:07:20,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.025623301 0.16339801
-Epoch 0:  12%|█▏        | 191/1563 [09:22<1:07:19,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 191/1563 [09:22<1:07:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.07441479 0.19396423
-Epoch 0:  12%|█▏        | 192/1563 [09:26<1:07:23,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 192/1563 [09:26<1:07:23,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.050335884 0.19763868
-Epoch 0:  12%|█▏        | 193/1563 [09:29<1:07:19,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 193/1563 [09:29<1:07:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.029601179 0.19059628
-Epoch 0:  12%|█▏        | 194/1563 [09:31<1:07:15,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 194/1563 [09:31<1:07:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0142454235 0.19501099
-Epoch 0:  12%|█▏        | 195/1563 [09:35<1:07:18,  0.34it/s, v_num=ss04]Epoch 0:  12%|█▏        | 195/1563 [09:35<1:07:18,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0011870842 0.19085641
-Epoch 0:  13%|█▎        | 196/1563 [09:38<1:07:17,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 196/1563 [09:38<1:07:17,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.005824885 0.21249034
-Epoch 0:  13%|█▎        | 197/1563 [09:41<1:07:10,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 197/1563 [09:41<1:07:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.016880104 0.21909025
-Epoch 0:  13%|█▎        | 198/1563 [09:44<1:07:07,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 198/1563 [09:44<1:07:07,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.003344673 0.2287621
-Epoch 0:  13%|█▎        | 199/1563 [09:46<1:07:01,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 199/1563 [09:46<1:07:01,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.010402192 0.24546033
-Epoch 0:  13%|█▎        | 200/1563 [09:50<1:07:01,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 200/1563 [09:50<1:07:01,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.04570807 0.22689283
-Epoch 0:  13%|█▎        | 201/1563 [09:53<1:07:00,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 201/1563 [09:53<1:07:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.15583794 0.25690675
-Epoch 0:  13%|█▎        | 202/1563 [09:56<1:06:59,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 202/1563 [09:56<1:06:59,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.05754952 0.2858513
-Epoch 0:  13%|█▎        | 203/1563 [09:59<1:06:54,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 203/1563 [09:59<1:06:54,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.117926 0.24754229
-Epoch 0:  13%|█▎        | 204/1563 [10:02<1:06:56,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 204/1563 [10:02<1:06:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.068875365 0.25950634
-Epoch 0:  13%|█▎        | 205/1563 [10:05<1:06:53,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 205/1563 [10:05<1:06:53,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.03493645 0.24409686
-Epoch 0:  13%|█▎        | 206/1563 [10:08<1:06:46,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 206/1563 [10:08<1:06:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0022591082 0.22109278
-Epoch 0:  13%|█▎        | 207/1563 [10:12<1:06:50,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 207/1563 [10:12<1:06:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.019739643 0.2250239
-Epoch 0:  13%|█▎        | 208/1563 [10:15<1:06:47,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 208/1563 [10:15<1:06:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.02381071 0.16814007
-Epoch 0:  13%|█▎        | 209/1563 [10:18<1:06:44,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 209/1563 [10:18<1:06:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.011083527 0.20445997
-Epoch 0:  13%|█▎        | 210/1563 [10:21<1:06:46,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 210/1563 [10:21<1:06:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.07376979 0.2199444
-Epoch 0:  13%|█▎        | 211/1563 [10:24<1:06:42,  0.34it/s, v_num=ss04]Epoch 0:  13%|█▎        | 211/1563 [10:24<1:06:42,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.004014993 0.23295
-Epoch 0:  14%|█▎        | 212/1563 [10:26<1:06:34,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▎        | 212/1563 [10:26<1:06:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.09438635 0.250887
-Epoch 0:  14%|█▎        | 213/1563 [10:29<1:06:30,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▎        | 213/1563 [10:29<1:06:30,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.04211769 0.23728903
-Epoch 0:  14%|█▎        | 214/1563 [10:32<1:06:25,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▎        | 214/1563 [10:32<1:06:25,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.08619725 0.24544124
-Epoch 0:  14%|█▍        | 215/1563 [10:36<1:06:27,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 215/1563 [10:36<1:06:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.071604565 0.28477538
-Epoch 0:  14%|█▍        | 216/1563 [10:38<1:06:24,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 216/1563 [10:38<1:06:24,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0036502418 0.29705054
-Epoch 0:  14%|█▍        | 217/1563 [10:41<1:06:20,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 217/1563 [10:41<1:06:20,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.036104593 0.30045235
-Epoch 0:  14%|█▍        | 218/1563 [10:44<1:06:14,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 218/1563 [10:44<1:06:14,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.04611301 0.335405
-Epoch 0:  14%|█▍        | 219/1563 [10:46<1:06:08,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 219/1563 [10:46<1:06:08,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.034399882 0.30241483
-Epoch 0:  14%|█▍        | 220/1563 [10:49<1:06:04,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 220/1563 [10:49<1:06:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.043898467 0.28053087
-Epoch 0:  14%|█▍        | 221/1563 [10:52<1:06:04,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 221/1563 [10:52<1:06:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.04161223 0.2708539
-Epoch 0:  14%|█▍        | 222/1563 [10:56<1:06:03,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 222/1563 [10:56<1:06:03,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.006263038 0.2594134
-Epoch 0:  14%|█▍        | 223/1563 [10:59<1:06:00,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 223/1563 [10:59<1:06:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.013966918 0.27444425
-Epoch 0:  14%|█▍        | 224/1563 [11:01<1:05:54,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 224/1563 [11:01<1:05:54,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.052720644 0.2604669
-Epoch 0:  14%|█▍        | 225/1563 [11:04<1:05:48,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 225/1563 [11:04<1:05:48,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 5.4048087e-05 0.24745458
-Epoch 0:  14%|█▍        | 226/1563 [11:06<1:05:43,  0.34it/s, v_num=ss04]Epoch 0:  14%|█▍        | 226/1563 [11:06<1:05:43,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.020253005 0.2758757
-Epoch 0:  15%|█▍        | 227/1563 [11:08<1:05:36,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 227/1563 [11:08<1:05:36,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.02902142 0.26923805
-Epoch 0:  15%|█▍        | 228/1563 [11:11<1:05:33,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 228/1563 [11:11<1:05:33,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.004009047 0.2645173
-Epoch 0:  15%|█▍        | 229/1563 [11:14<1:05:28,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 229/1563 [11:14<1:05:28,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.046981946 0.31600603
-Epoch 0:  15%|█▍        | 230/1563 [11:18<1:05:31,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 230/1563 [11:18<1:05:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0358224 0.3166892
-Epoch 0:  15%|█▍        | 231/1563 [11:21<1:05:29,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 231/1563 [11:21<1:05:29,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.01518951 0.27552694
-Epoch 0:  15%|█▍        | 232/1563 [11:24<1:05:25,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 232/1563 [11:24<1:05:25,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.02621651 0.26169798
-Epoch 0:  15%|█▍        | 233/1563 [11:27<1:05:24,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 233/1563 [11:27<1:05:24,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.017247716 0.25164407
-Epoch 0:  15%|█▍        | 234/1563 [11:30<1:05:21,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▍        | 234/1563 [11:30<1:05:21,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0036856714 0.20722784
-Epoch 0:  15%|█▌        | 235/1563 [11:33<1:05:18,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 235/1563 [11:33<1:05:18,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.026103491 0.22868721
-Epoch 0:  15%|█▌        | 236/1563 [11:36<1:05:15,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 236/1563 [11:36<1:05:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012499863 0.25750184
-Epoch 0:  15%|█▌        | 237/1563 [11:38<1:05:09,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 237/1563 [11:38<1:05:09,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012292613 0.32068613
-Epoch 0:  15%|█▌        | 238/1563 [11:42<1:05:10,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 238/1563 [11:42<1:05:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0027470933 0.3976886
-Epoch 0:  15%|█▌        | 239/1563 [11:45<1:05:06,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 239/1563 [11:45<1:05:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.11578148 0.40284726
-Epoch 0:  15%|█▌        | 240/1563 [11:47<1:05:00,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 240/1563 [11:47<1:05:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.04727629 0.39477968
-Epoch 0:  15%|█▌        | 241/1563 [11:49<1:04:53,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 241/1563 [11:49<1:04:53,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.103340216 0.32272574
-Epoch 0:  15%|█▌        | 242/1563 [11:53<1:04:53,  0.34it/s, v_num=ss04]Epoch 0:  15%|█▌        | 242/1563 [11:53<1:04:53,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.034048043 0.28720272
-Epoch 0:  16%|█▌        | 243/1563 [11:56<1:04:52,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 243/1563 [11:56<1:04:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.03237038 0.27876896
-Epoch 0:  16%|█▌        | 244/1563 [11:59<1:04:47,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 244/1563 [11:59<1:04:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.017794406 0.26886997
-Epoch 0:  16%|█▌        | 245/1563 [12:02<1:04:45,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 245/1563 [12:02<1:04:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0041845534 0.28907144
-Epoch 0:  16%|█▌        | 246/1563 [12:05<1:04:45,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 246/1563 [12:05<1:04:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.03481352 0.28289065
-Epoch 0:  16%|█▌        | 247/1563 [12:08<1:04:42,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 247/1563 [12:08<1:04:42,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.027147578 0.33822426
-Epoch 0:  16%|█▌        | 248/1563 [12:10<1:04:35,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 248/1563 [12:10<1:04:35,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.055379994 0.35787183
-Epoch 0:  16%|█▌        | 249/1563 [12:13<1:04:31,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 249/1563 [12:13<1:04:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.03554099 0.33152005
-Epoch 0:  16%|█▌        | 250/1563 [12:16<1:04:27,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 250/1563 [12:16<1:04:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.027930016 0.3416064
-Epoch 0:  16%|█▌        | 251/1563 [12:19<1:04:27,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 251/1563 [12:19<1:04:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.06769654 0.33451742
-Epoch 0:  16%|█▌        | 252/1563 [12:23<1:04:29,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 252/1563 [12:23<1:04:29,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.008878956 0.30540153
-Epoch 0:  16%|█▌        | 253/1563 [12:26<1:04:25,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▌        | 253/1563 [12:26<1:04:25,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.025840001 0.30097494
-Epoch 0:  16%|█▋        | 254/1563 [12:29<1:04:21,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▋        | 254/1563 [12:29<1:04:21,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.047888275 0.3316154
-Epoch 0:  16%|█▋        | 255/1563 [12:32<1:04:17,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▋        | 255/1563 [12:32<1:04:17,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0016575404 0.3438837
-Epoch 0:  16%|█▋        | 256/1563 [12:34<1:04:11,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▋        | 256/1563 [12:34<1:04:11,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.030514166 0.3005786
-Epoch 0:  16%|█▋        | 257/1563 [12:37<1:04:06,  0.34it/s, v_num=ss04]Epoch 0:  16%|█▋        | 257/1563 [12:37<1:04:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.019609373 0.2751081
-Epoch 0:  17%|█▋        | 258/1563 [12:39<1:04:02,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 258/1563 [12:39<1:04:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0002487313 0.25571966
-Epoch 0:  17%|█▋        | 259/1563 [12:42<1:03:57,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 259/1563 [12:42<1:03:57,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0036550206 0.3000219
-Epoch 0:  17%|█▋        | 260/1563 [12:44<1:03:50,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 260/1563 [12:44<1:03:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0022109798 0.33910316
-Epoch 0:  17%|█▋        | 261/1563 [12:47<1:03:50,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 261/1563 [12:47<1:03:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.020798964 0.41999364
-Epoch 0:  17%|█▋        | 262/1563 [12:50<1:03:45,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 262/1563 [12:50<1:03:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.006760166 0.3657802
-Epoch 0:  17%|█▋        | 263/1563 [12:54<1:03:46,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 263/1563 [12:54<1:03:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.041043546 0.3097512
-Epoch 0:  17%|█▋        | 264/1563 [12:56<1:03:40,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 264/1563 [12:56<1:03:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.008673623 0.28982112
-Epoch 0:  17%|█▋        | 265/1563 [12:59<1:03:35,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 265/1563 [12:59<1:03:35,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.031678677 0.3287102
-Epoch 0:  17%|█▋        | 266/1563 [13:02<1:03:35,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 266/1563 [13:02<1:03:35,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.011603449 0.36010003
-Epoch 0:  17%|█▋        | 267/1563 [13:06<1:03:35,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 267/1563 [13:06<1:03:35,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.013510304 0.38200456
-Epoch 0:  17%|█▋        | 268/1563 [13:10<1:03:37,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 268/1563 [13:10<1:03:37,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.004753911 0.34830242
-Epoch 0:  17%|█▋        | 269/1563 [13:12<1:03:31,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 269/1563 [13:12<1:03:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.015388259 0.35135254
-Epoch 0:  17%|█▋        | 270/1563 [13:15<1:03:29,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 270/1563 [13:15<1:03:29,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.07020205 0.28302717
-Epoch 0:  17%|█▋        | 271/1563 [13:18<1:03:26,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 271/1563 [13:18<1:03:26,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0715692 0.28074762
-Epoch 0:  17%|█▋        | 272/1563 [13:21<1:03:23,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 272/1563 [13:21<1:03:23,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.02323635 0.33052373
-Epoch 0:  17%|█▋        | 273/1563 [13:24<1:03:19,  0.34it/s, v_num=ss04]Epoch 0:  17%|█▋        | 273/1563 [13:24<1:03:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.05977924 0.29488298
-Epoch 0:  18%|█▊        | 274/1563 [13:27<1:03:18,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 274/1563 [13:27<1:03:18,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.06339977 0.30925688
-Epoch 0:  18%|█▊        | 275/1563 [13:31<1:03:19,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 275/1563 [13:31<1:03:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.027978415 0.34880266
-Epoch 0:  18%|█▊        | 276/1563 [13:33<1:03:15,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 276/1563 [13:33<1:03:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.036776844 0.35417292
-Epoch 0:  18%|█▊        | 277/1563 [13:36<1:03:11,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 277/1563 [13:36<1:03:11,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.004203554 0.38403118
-Epoch 0:  18%|█▊        | 278/1563 [13:39<1:03:10,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 278/1563 [13:39<1:03:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.015438339 0.34960258
-Epoch 0:  18%|█▊        | 279/1563 [13:42<1:03:05,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 279/1563 [13:42<1:03:05,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.003611701 0.36641487
-Epoch 0:  18%|█▊        | 280/1563 [13:45<1:03:02,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 280/1563 [13:45<1:03:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.024369923 0.44551858
-Epoch 0:  18%|█▊        | 281/1563 [13:47<1:02:56,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 281/1563 [13:47<1:02:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.07928714 0.4388973
-Epoch 0:  18%|█▊        | 282/1563 [13:50<1:02:52,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 282/1563 [13:50<1:02:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.022240655 0.31391126
-Epoch 0:  18%|█▊        | 283/1563 [13:53<1:02:52,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 283/1563 [13:53<1:02:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.036162384 0.284124
-Epoch 0:  18%|█▊        | 284/1563 [13:56<1:02:49,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 284/1563 [13:56<1:02:49,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.06150611 0.35496756
-Epoch 0:  18%|█▊        | 285/1563 [13:59<1:02:45,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 285/1563 [13:59<1:02:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0054684966 0.34000838
-Epoch 0:  18%|█▊        | 286/1563 [14:04<1:02:50,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 286/1563 [14:04<1:02:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.06395801 0.5207599
-Epoch 0:  18%|█▊        | 287/1563 [14:07<1:02:46,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 287/1563 [14:07<1:02:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.06111216 0.48404375
-Epoch 0:  18%|█▊        | 288/1563 [14:09<1:02:42,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 288/1563 [14:09<1:02:42,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.047243804 0.41094357
-Epoch 0:  18%|█▊        | 289/1563 [14:13<1:02:41,  0.34it/s, v_num=ss04]Epoch 0:  18%|█▊        | 289/1563 [14:13<1:02:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.07805162 0.32933667
-Epoch 0:  19%|█▊        | 290/1563 [14:15<1:02:37,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▊        | 290/1563 [14:15<1:02:37,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.023116868 0.29606748
-Epoch 0:  19%|█▊        | 291/1563 [14:18<1:02:34,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▊        | 291/1563 [14:18<1:02:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.029627683 0.2971708
-Epoch 0:  19%|█▊        | 292/1563 [14:21<1:02:30,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▊        | 292/1563 [14:21<1:02:30,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.047037568 0.33302584
-Epoch 0:  19%|█▊        | 293/1563 [14:24<1:02:26,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▊        | 293/1563 [14:24<1:02:26,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0076519176 0.36025593
-Epoch 0:  19%|█▉        | 294/1563 [14:26<1:02:21,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 294/1563 [14:26<1:02:21,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.032489486 0.31033522
-Epoch 0:  19%|█▉        | 295/1563 [14:30<1:02:19,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 295/1563 [14:30<1:02:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.027836096 0.30847844
-Epoch 0:  19%|█▉        | 296/1563 [14:32<1:02:16,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 296/1563 [14:32<1:02:16,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0067353193 0.24420512
-Epoch 0:  19%|█▉        | 297/1563 [14:35<1:02:13,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 297/1563 [14:35<1:02:13,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.01737349 0.2965315
-Epoch 0:  19%|█▉        | 298/1563 [14:38<1:02:10,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 298/1563 [14:38<1:02:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012379897 0.31988692
-Epoch 0:  19%|█▉        | 299/1563 [14:41<1:02:04,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 299/1563 [14:41<1:02:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.010613875 0.38914046
-Epoch 0:  19%|█▉        | 300/1563 [14:44<1:02:02,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 300/1563 [14:44<1:02:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0011320463 0.32257494
-Epoch 0:  19%|█▉        | 301/1563 [14:46<1:01:58,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 301/1563 [14:46<1:01:58,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0072948383 0.33900398
-Epoch 0:  19%|█▉        | 302/1563 [14:50<1:01:56,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 302/1563 [14:50<1:01:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.020756122 0.3854629
-Epoch 0:  19%|█▉        | 303/1563 [14:52<1:01:53,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 303/1563 [14:52<1:01:53,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.01888176 0.32409698
-Epoch 0:  19%|█▉        | 304/1563 [14:55<1:01:50,  0.34it/s, v_num=ss04]Epoch 0:  19%|█▉        | 304/1563 [14:55<1:01:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.014268381 0.3706146
-Epoch 0:  20%|█▉        | 305/1563 [14:59<1:01:48,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 305/1563 [14:59<1:01:48,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012600894 0.38799676
-Epoch 0:  20%|█▉        | 306/1563 [15:02<1:01:47,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 306/1563 [15:02<1:01:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0097082 0.3883857
-Epoch 0:  20%|█▉        | 307/1563 [15:05<1:01:46,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 307/1563 [15:05<1:01:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.039344206 0.425809
-Epoch 0:  20%|█▉        | 308/1563 [15:08<1:01:40,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 308/1563 [15:08<1:01:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.02837576 0.33496028
-Epoch 0:  20%|█▉        | 309/1563 [15:12<1:01:41,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 309/1563 [15:12<1:01:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.038846545 0.3154367
-Epoch 0:  20%|█▉        | 310/1563 [15:15<1:01:39,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 310/1563 [15:15<1:01:39,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.054499295 0.3364475
-Epoch 0:  20%|█▉        | 311/1563 [15:17<1:01:34,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 311/1563 [15:17<1:01:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0343868 0.40455112
-Epoch 0:  20%|█▉        | 312/1563 [15:21<1:01:34,  0.34it/s, v_num=ss04]Epoch 0:  20%|█▉        | 312/1563 [15:21<1:01:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.051847406 0.36713436
-Epoch 0:  20%|██        | 313/1563 [15:24<1:01:32,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 313/1563 [15:24<1:01:32,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.091362566 0.40363705
-Epoch 0:  20%|██        | 314/1563 [15:27<1:01:28,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 314/1563 [15:27<1:01:28,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.068679295 0.33502823
-Epoch 0:  20%|██        | 315/1563 [15:30<1:01:27,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 315/1563 [15:30<1:01:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0028157 0.33594182
-Epoch 0:  20%|██        | 316/1563 [15:33<1:01:23,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 316/1563 [15:33<1:01:23,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.06191322 0.27971023
-Epoch 0:  20%|██        | 317/1563 [15:35<1:01:18,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 317/1563 [15:35<1:01:18,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.066796504 0.32624012
-Epoch 0:  20%|██        | 318/1563 [15:39<1:01:18,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 318/1563 [15:39<1:01:18,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.025526958 0.28761116
-Epoch 0:  20%|██        | 319/1563 [15:42<1:01:15,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 319/1563 [15:42<1:01:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.016321406 0.4125915
-Epoch 0:  20%|██        | 320/1563 [15:45<1:01:11,  0.34it/s, v_num=ss04]Epoch 0:  20%|██        | 320/1563 [15:45<1:01:11,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.05365122 0.47613335
-Epoch 0:  21%|██        | 321/1563 [15:48<1:01:08,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 321/1563 [15:48<1:01:08,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.052114606 0.41026044
-Epoch 0:  21%|██        | 322/1563 [15:50<1:01:04,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 322/1563 [15:50<1:01:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0194786 0.3341281
-Epoch 0:  21%|██        | 323/1563 [15:53<1:01:00,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 323/1563 [15:53<1:01:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.03143232 0.29958692
-Epoch 0:  21%|██        | 324/1563 [15:55<1:00:55,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 324/1563 [15:55<1:00:55,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.03813751 0.2910873
-Epoch 0:  21%|██        | 325/1563 [15:58<1:00:49,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 325/1563 [15:58<1:00:49,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.014662629 0.32617003
-Epoch 0:  21%|██        | 326/1563 [16:00<1:00:44,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 326/1563 [16:00<1:00:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.032425422 0.306916
-Epoch 0:  21%|██        | 327/1563 [16:04<1:00:44,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 327/1563 [16:04<1:00:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.024764242 0.36398545
-Epoch 0:  21%|██        | 328/1563 [16:06<1:00:40,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 328/1563 [16:06<1:00:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.016774865 0.40528607
-Epoch 0:  21%|██        | 329/1563 [16:09<1:00:36,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 329/1563 [16:09<1:00:36,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0038417513 0.3922397
-Epoch 0:  21%|██        | 330/1563 [16:11<1:00:31,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 330/1563 [16:11<1:00:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.008099782 0.36961436
-Epoch 0:  21%|██        | 331/1563 [16:14<1:00:27,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 331/1563 [16:14<1:00:27,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.011869703 0.42552063
-Epoch 0:  21%|██        | 332/1563 [16:17<1:00:24,  0.34it/s, v_num=ss04]Epoch 0:  21%|██        | 332/1563 [16:17<1:00:24,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.008360559 0.37342235
-Epoch 0:  21%|██▏       | 333/1563 [16:20<1:00:22,  0.34it/s, v_num=ss04]Epoch 0:  21%|██▏       | 333/1563 [16:20<1:00:22,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.009156301 0.35643575
-Epoch 0:  21%|██▏       | 334/1563 [16:24<1:00:23,  0.34it/s, v_num=ss04]Epoch 0:  21%|██▏       | 334/1563 [16:24<1:00:23,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0021923627 0.293891
-Epoch 0:  21%|██▏       | 335/1563 [16:27<1:00:20,  0.34it/s, v_num=ss04]Epoch 0:  21%|██▏       | 335/1563 [16:27<1:00:20,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.003595312 0.3708798
-Epoch 0:  21%|██▏       | 336/1563 [16:30<1:00:16,  0.34it/s, v_num=ss04]Epoch 0:  21%|██▏       | 336/1563 [16:30<1:00:16,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0054296493 0.43530658
-Epoch 0:  22%|██▏       | 337/1563 [16:33<1:00:12,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 337/1563 [16:33<1:00:12,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0018479897 0.36867252
-Epoch 0:  22%|██▏       | 338/1563 [16:35<1:00:08,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 338/1563 [16:35<1:00:08,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0014443212 0.38165054
-Epoch 0:  22%|██▏       | 339/1563 [16:38<1:00:06,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 339/1563 [16:38<1:00:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.009267067 0.41874263
-Epoch 0:  22%|██▏       | 340/1563 [16:41<1:00:03,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 340/1563 [16:41<1:00:03,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012786828 0.35962644
-Epoch 0:  22%|██▏       | 341/1563 [16:44<1:00:00,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 341/1563 [16:44<1:00:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.006603067 0.34702903
-Epoch 0:  22%|██▏       | 342/1563 [16:47<59:57,  0.34it/s, v_num=ss04]  Epoch 0:  22%|██▏       | 342/1563 [16:47<59:57,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.011099509 0.2878591
-Epoch 0:  22%|██▏       | 343/1563 [16:50<59:52,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 343/1563 [16:50<59:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.00044237325 0.39508057
-Epoch 0:  22%|██▏       | 344/1563 [16:52<59:47,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 344/1563 [16:52<59:47,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.018415084 0.44626558
-Epoch 0:  22%|██▏       | 345/1563 [16:55<59:44,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 345/1563 [16:55<59:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0022297467 0.35773757
-Epoch 0:  22%|██▏       | 346/1563 [16:57<59:39,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 346/1563 [16:57<59:39,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.033232946 0.32313877
-Epoch 0:  22%|██▏       | 347/1563 [16:59<59:34,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 347/1563 [16:59<59:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.025198048 0.3673173
-Epoch 0:  22%|██▏       | 348/1563 [17:02<59:31,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 348/1563 [17:02<59:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0074679805 0.36730686
-Epoch 0:  22%|██▏       | 349/1563 [17:06<59:29,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 349/1563 [17:06<59:29,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.02946013 0.43866923
-Epoch 0:  22%|██▏       | 350/1563 [17:09<59:28,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 350/1563 [17:09<59:28,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.040774204 0.4001542
-Epoch 0:  22%|██▏       | 351/1563 [17:12<59:24,  0.34it/s, v_num=ss04]Epoch 0:  22%|██▏       | 351/1563 [17:12<59:24,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0068133785 0.5108355
-Epoch 0:  23%|██▎       | 352/1563 [17:15<59:22,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 352/1563 [17:15<59:22,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.035297897 0.43033853
-Epoch 0:  23%|██▎       | 353/1563 [17:18<59:19,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 353/1563 [17:18<59:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0034113792 0.32168245
-Epoch 0:  23%|██▎       | 354/1563 [17:21<59:15,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 354/1563 [17:21<59:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.013468482 0.31813732
-Epoch 0:  23%|██▎       | 355/1563 [17:24<59:13,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 355/1563 [17:24<59:13,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0015221828 0.34503606
-Epoch 0:  23%|██▎       | 356/1563 [17:27<59:10,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 356/1563 [17:27<59:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.009064934 0.39607844
-Epoch 0:  23%|██▎       | 357/1563 [17:29<59:06,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 357/1563 [17:29<59:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0028134044 0.33847055
-Epoch 0:  23%|██▎       | 358/1563 [17:33<59:06,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 358/1563 [17:33<59:06,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.021576287 0.39795318
-Epoch 0:  23%|██▎       | 359/1563 [17:36<59:04,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 359/1563 [17:36<59:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012011349 0.30813146
-Epoch 0:  23%|██▎       | 360/1563 [17:40<59:02,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 360/1563 [17:40<59:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.009231842 0.39803013
-Epoch 0:  23%|██▎       | 361/1563 [17:42<58:59,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 361/1563 [17:42<58:59,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0033270202 0.43855006
-Epoch 0:  23%|██▎       | 362/1563 [17:46<58:58,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 362/1563 [17:46<58:58,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.009343073 0.42174315
-Epoch 0:  23%|██▎       | 363/1563 [17:49<58:57,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 363/1563 [17:49<58:57,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.020676296 0.40879557
-Epoch 0:  23%|██▎       | 364/1563 [17:53<58:55,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 364/1563 [17:53<58:55,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0065915356 0.42636338
-Epoch 0:  23%|██▎       | 365/1563 [17:56<58:53,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 365/1563 [17:56<58:53,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012856627 0.3716249
-Epoch 0:  23%|██▎       | 366/1563 [17:59<58:50,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 366/1563 [17:59<58:50,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.02016228 0.3332817
-Epoch 0:  23%|██▎       | 367/1563 [18:02<58:46,  0.34it/s, v_num=ss04]Epoch 0:  23%|██▎       | 367/1563 [18:02<58:46,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.02052175 0.31285086
-Epoch 0:  24%|██▎       | 368/1563 [18:05<58:44,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▎       | 368/1563 [18:05<58:44,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012944416 0.3219503
-Epoch 0:  24%|██▎       | 369/1563 [18:07<58:40,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▎       | 369/1563 [18:07<58:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.017167674 0.35275936
-Epoch 0:  24%|██▎       | 370/1563 [18:11<58:39,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▎       | 370/1563 [18:11<58:39,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0018419437 0.3919117
-Epoch 0:  24%|██▎       | 371/1563 [18:13<58:33,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▎       | 371/1563 [18:13<58:33,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.014662978 0.4416237
-Epoch 0:  24%|██▍       | 372/1563 [18:16<58:31,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 372/1563 [18:16<58:31,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.00905349 0.38332075
-Epoch 0:  24%|██▍       | 373/1563 [18:19<58:28,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 373/1563 [18:19<58:28,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.009067818 0.3580275
-Epoch 0:  24%|██▍       | 374/1563 [18:22<58:24,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 374/1563 [18:22<58:24,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0075704274 0.33610603
-Epoch 0:  24%|██▍       | 375/1563 [18:25<58:21,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 375/1563 [18:25<58:21,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0003252318 0.40199476
-Epoch 0:  24%|██▍       | 376/1563 [18:28<58:18,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 376/1563 [18:28<58:18,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.011606541 0.3912813
-Epoch 0:  24%|██▍       | 377/1563 [18:31<58:15,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 377/1563 [18:31<58:15,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0058412794 0.31003365
-Epoch 0:  24%|██▍       | 378/1563 [18:34<58:12,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 378/1563 [18:34<58:12,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0008855619 0.344747
-Epoch 0:  24%|██▍       | 379/1563 [18:36<58:08,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 379/1563 [18:36<58:08,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0023483387 0.3530991
-Epoch 0:  24%|██▍       | 380/1563 [18:39<58:05,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 380/1563 [18:39<58:05,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.017393678 0.44691432
-Epoch 0:  24%|██▍       | 381/1563 [18:43<58:04,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 381/1563 [18:43<58:04,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.012853523 0.4197561
-Epoch 0:  24%|██▍       | 382/1563 [18:46<58:02,  0.34it/s, v_num=ss04]Epoch 0:  24%|██▍       | 382/1563 [18:46<58:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0015820366 0.36194557
-Epoch 0:  25%|██▍       | 383/1563 [18:48<57:56,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 383/1563 [18:48<57:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.013377351 0.350222
-Epoch 0:  25%|██▍       | 384/1563 [18:51<57:52,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 384/1563 [18:51<57:52,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.007439561 0.47300187
-Epoch 0:  25%|██▍       | 385/1563 [18:53<57:48,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 385/1563 [18:53<57:48,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0076329554 0.4163189
-Epoch 0:  25%|██▍       | 386/1563 [18:56<57:45,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 386/1563 [18:56<57:45,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.010171357 0.36328018
-Epoch 0:  25%|██▍       | 387/1563 [18:59<57:41,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 387/1563 [18:59<57:41,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.008304734 0.34031552
-Epoch 0:  25%|██▍       | 388/1563 [19:02<57:40,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 388/1563 [19:02<57:40,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012113412 0.3564099
-Epoch 0:  25%|██▍       | 389/1563 [19:05<57:37,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 389/1563 [19:05<57:37,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.022657396 0.37061432
-Epoch 0:  25%|██▍       | 390/1563 [19:08<57:34,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▍       | 390/1563 [19:08<57:34,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0136043085 0.3398067
-Epoch 0:  25%|██▌       | 391/1563 [19:10<57:29,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 391/1563 [19:10<57:29,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.016704489 0.37316355
-Epoch 0:  25%|██▌       | 392/1563 [19:13<57:26,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 392/1563 [19:13<57:26,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.00861198 0.3205915
-Epoch 0:  25%|██▌       | 393/1563 [19:17<57:24,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 393/1563 [19:17<57:24,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.022773426 0.4122334
-Epoch 0:  25%|██▌       | 394/1563 [19:19<57:19,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 394/1563 [19:19<57:19,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0015073371 0.4022166
-Epoch 0:  25%|██▌       | 395/1563 [19:22<57:16,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 395/1563 [19:22<57:16,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.0048854854 0.360099
-Epoch 0:  25%|██▌       | 396/1563 [19:24<57:12,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 396/1563 [19:24<57:12,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.008073583 0.42972752
-Epoch 0:  25%|██▌       | 397/1563 [19:28<57:10,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 397/1563 [19:28<57:10,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0018373401 0.40463564
-Epoch 0:  25%|██▌       | 398/1563 [19:31<57:08,  0.34it/s, v_num=ss04]Epoch 0:  25%|██▌       | 398/1563 [19:31<57:08,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.011464686 0.40061674
-Epoch 0:  26%|██▌       | 399/1563 [19:34<57:05,  0.34it/s, v_num=ss04]Epoch 0:  26%|██▌       | 399/1563 [19:34<57:05,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.012410228 0.31648898
-Epoch 0:  26%|██▌       | 400/1563 [19:37<57:02,  0.34it/s, v_num=ss04]Epoch 0:  26%|██▌       | 400/1563 [19:37<57:02,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.005966873 0.2719567
-Epoch 0:  26%|██▌       | 401/1563 [19:40<57:00,  0.34it/s, v_num=ss04]Epoch 0:  26%|██▌       | 401/1563 [19:40<57:00,  0.34it/s, v_num=ss04]
-
-Pred mean/std: -0.008437765 0.3891148
-Epoch 0:  26%|██▌       | 402/1563 [19:42<56:56,  0.34it/s, v_num=ss04]Epoch 0:  26%|██▌       | 402/1563 [19:42<56:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0005683515 0.37691748
-Epoch 0:  26%|██▌       | 403/1563 [19:46<56:56,  0.34it/s, v_num=ss04]Epoch 0:  26%|██▌       | 403/1563 [19:46<56:56,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.0076154186 0.38157687
-Epoch 0:  26%|██▌       | 404/1563 [19:49<56:53,  0.34it/s, v_num=ss04]Epoch 0:  26%|██▌       | 404/1563 [19:49<56:53,  0.34it/s, v_num=ss04]
-
-Pred mean/std: 0.011046324 0.3966607
-Epoch 0:  26%|██▌       | 405/1563 [19:52<56:49,  0.34it/s, v_num=ss04]Epoch 0:  26%|██▌       | 405/1563 [19:52<56:49,  0.34it/s, v_num=ss04]Traceback (most recent call last):
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/pretrain.py", line 114, in <module>
-    model, trainer = MatterTuner(mt_config).tune()
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/src/mattertune/main.py", line 278, in tune
-    trainer.fit(lightning_module, datamodule)
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 560, in fit
-    call._call_and_handle_interrupt(
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
-    return trainer_fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 598, in _fit_impl
-    self._run(model, ckpt_path=ckpt_path)
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1011, in _run
-    results = self._run_stage()
-              ^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1055, in _run_stage
-    self.fit_loop.run()
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/fit_loop.py", line 216, in run
-    self.advance()
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/fit_loop.py", line 458, in advance
-    self.epoch_loop.run(self._data_fetcher)
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 152, in run
-    self.advance(data_fetcher)
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 348, in advance
-    batch_output = self.automatic_optimization.run(trainer.optimizers[0], batch_idx, kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/optimization/automatic.py", line 192, in run
-    self._optimizer_step(batch_idx, closure)
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/optimization/automatic.py", line 270, in _optimizer_step
-    call._call_lightning_module_hook(
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 177, in _call_lightning_module_hook
-    output = fn(*args, **kwargs)
-             ^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/core/module.py", line 1366, in optimizer_step
-    optimizer.step(closure=optimizer_closure)
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/core/optimizer.py", line 154, in step
-    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/strategies/strategy.py", line 239, in optimizer_step
-    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/plugins/precision/precision.py", line 123, in optimizer_step
-    return optimizer.step(closure=closure, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 517, in wrapper
-    out = func(*args, **kwargs)
-          ^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/optim/optimizer.py", line 82, in _use_grad
-    ret = func(*args, **kwargs)
-          ^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/optim/adam.py", line 226, in step
-    loss = closure()
-           ^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/plugins/precision/precision.py", line 109, in _wrap_closure
-    closure_result = closure()
-                     ^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/optimization/automatic.py", line 146, in __call__
-    self._result = self.closure(*args, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/optimization/automatic.py", line 131, in closure
-    step_output = self._step_fn()
-                  ^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/loops/optimization/automatic.py", line 319, in _training_step
-    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 329, in _call_strategy_hook
-    output = fn(*args, **kwargs)
-             ^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/lightning/pytorch/strategies/strategy.py", line 391, in training_step
-    return self.lightning_module.training_step(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/src/mattertune/finetune/base.py", line 643, in training_step
-    _, loss = self._common_step(
-              ^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/src/mattertune/finetune/base.py", line 586, in _common_step
-    output: ModelOutput = self(batch, mode=mode)
-                          ^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/src/mattertune/finetune/base.py", line 538, in forward
-    model_output = self.model_forward(batch, mode=mode)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/src/mattertune/backbones/orb/model.py", line 422, in model_forward
-    out = self.backbone(batch)
-          ^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/orb_models/forcefield/gns.py", line 502, in forward
-    nodes, edges = gnn(
-                   ^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/orb_models/forcefield/gns.py", line 246, in forward
-    updated_edges = self._edge_mlp(edge_features)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
-    input = module(input)
-            ^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
-    input = module(input)
-            ^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
-    return forward_call(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/global/cfs/cdirs/m3641/Aamod/MatterTune_diffusion/.venv/lib/python3.12/site-packages/orb_models/forcefield/nn_util.py", line 172, in forward
-    return F.softplus(input, self.beta, self.threshold) - sp0
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
-torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 304.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 171.88 MiB is free. Process 1719122 has 4.59 GiB memory in use. Including non-PyTorch memory, this process has 34.69 GiB memory in use. Of the allocated memory 33.01 GiB is allocated by PyTorch, and 1.18 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
-[1;34mwandb[0m: 
-[1;34mwandb[0m: 🚀 View run [33mPretrain-diffusion-orb-v2[0m at: [34m[0m
