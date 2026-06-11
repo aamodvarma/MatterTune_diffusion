@@ -8,6 +8,7 @@ from mattertune.finetune.properties import EnergyPropertyConfig as EnergyPropert
 from mattertune.finetune.lr_scheduler import ExponentialConfig as ExponentialConfig
 from mattertune.finetune.base import FinetuneModuleBaseConfig as FinetuneModuleBaseConfig
 from mattertune.finetune.properties import ForcesPropertyConfig as ForcesPropertyConfig
+from mattertune.finetune.properties import NoisePropertyConfig as NoisePropertyConfig
 from mattertune.finetune.properties import GraphPropertyConfig as GraphPropertyConfig
 from mattertune.finetune.loss import HuberLossConfig as HuberLossConfig
 from mattertune.finetune.loss import L2MAELossConfig as L2MAELossConfig
@@ -30,6 +31,7 @@ from mattertune.finetune.properties import EnergyPropertyConfig as EnergyPropert
 from mattertune.finetune.lr_scheduler import ExponentialConfig as ExponentialConfig
 from mattertune.finetune.base import FinetuneModuleBaseConfig as FinetuneModuleBaseConfig
 from mattertune.finetune.properties import ForcesPropertyConfig as ForcesPropertyConfig
+from mattertune.finetune.properties import NoisePropertyConfig as NoisePropertyConfig
 from mattertune.finetune.properties import GraphPropertyConfig as GraphPropertyConfig
 from mattertune.finetune.loss import HuberLossConfig as HuberLossConfig
 from mattertune.finetune.loss import L2MAELossConfig as L2MAELossConfig
@@ -65,6 +67,7 @@ __all__ = [
     "ExponentialConfig",
     "FinetuneModuleBaseConfig",
     "ForcesPropertyConfig",
+    "NoisePropertyConfig",
     "GraphPropertyConfig",
     "HuberLossConfig",
     "L2MAELossConfig",

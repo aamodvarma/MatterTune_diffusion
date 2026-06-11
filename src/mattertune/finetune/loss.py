@@ -1,4 +1,5 @@
 from __future__ import annotations
+import numpy as np
 
 from typing import Annotated, Literal
 
@@ -107,6 +108,9 @@ def compute_loss(
             return F.l1_loss(prediction, label, reduction=config.reduction)
 
         case MSELossConfig():
+            pred_np = prediction.detach().cpu().numpy()
+            label_np = label.detach().cpu().numpy()
+            print("\n\nPred mean/std:", np.mean(pred_np), np.std(pred_np), flush=True)
             return F.mse_loss(prediction, label, reduction=config.reduction)
 
         case HuberLossConfig():

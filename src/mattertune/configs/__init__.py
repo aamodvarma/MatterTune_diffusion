@@ -20,6 +20,7 @@ from mattertune.finetune.lr_scheduler import ExponentialConfig as ExponentialCon
 from mattertune.backbones.uma.model import FAIRChemAtomsToGraphSystemConfig as FAIRChemAtomsToGraphSystemConfig
 from mattertune.registry import FinetuneModuleBaseConfig as FinetuneModuleBaseConfig
 from mattertune.finetune.properties import ForcesPropertyConfig as ForcesPropertyConfig
+from mattertune.finetune.properties import NoisePropertyConfig as NoisePropertyConfig
 from mattertune.finetune.properties import GraphPropertyConfig as GraphPropertyConfig
 from mattertune.finetune.loss import HuberLossConfig as HuberLossConfig
 from mattertune.backbones import JMPBackboneConfig as JMPBackboneConfig
@@ -90,6 +91,7 @@ from mattertune.finetune.lr_scheduler import ExponentialConfig as ExponentialCon
 from mattertune.backbones.uma.model import FAIRChemAtomsToGraphSystemConfig as FAIRChemAtomsToGraphSystemConfig
 from mattertune.registry import FinetuneModuleBaseConfig as FinetuneModuleBaseConfig
 from mattertune.finetune.properties import ForcesPropertyConfig as ForcesPropertyConfig
+from mattertune.finetune.properties import NoisePropertyConfig as NoisePropertyConfig
 from mattertune.finetune.properties import GraphPropertyConfig as GraphPropertyConfig
 from mattertune.finetune.loss import HuberLossConfig as HuberLossConfig
 from mattertune.backbones import JMPBackboneConfig as JMPBackboneConfig
@@ -184,6 +186,7 @@ __all__ = [
     "FAIRChemAtomsToGraphSystemConfig",
     "FinetuneModuleBaseConfig",
     "ForcesPropertyConfig",
+    "NoisePropertyConfig",
     "GraphPropertyConfig",
     "HuberLossConfig",
     "JMPBackboneConfig",

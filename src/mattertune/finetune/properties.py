@@ -236,11 +236,13 @@ class ForcesPropertyConfig(PropertyConfigBase):
 
     @override
     def from_ase_atoms(self, atoms):
-        return atoms.get_forces()
+        return atoms.info.get('noise', np.zeros_like(atoms.positions))
+        # return atoms.get_forces()
 
     @override
     def ase_calculator_property_name(self):
-        return "forces"
+        # return "forces"
+        return None
 
     @override
     def property_type(self):
@@ -285,13 +287,37 @@ class StressesPropertyConfig(PropertyConfigBase):
         return "system"
 
 
+class NoisePropertyConfig(PropertyConfigBase):
+    type: Literal["noise"] = "noise"
+
+    name: str = "noise"
+    """The name of the property.
+
+    This is the key that will be used to access the property in the output of the model."""
+
+    dtype: DType = "float"
+    """The type of the property values."""
+
+    @override
+    def from_ase_atoms(self, atoms):
+        return atoms.info.get('noise', np.zeros_like(atoms.positions))
+
+    @override
+    def ase_calculator_property_name(self):
+        return None
+
+    @override
+    def property_type(self):
+        return "atom"
+
 PropertyConfig = TypeAliasType(
     "PropertyConfig",
     Annotated[
         GraphPropertyConfig
         | EnergyPropertyConfig
         | ForcesPropertyConfig
-        | StressesPropertyConfig,
+        | StressesPropertyConfig
+        | NoisePropertyConfig,
         C.Field(
             description="The configuration for the property.",
             discriminator="type",

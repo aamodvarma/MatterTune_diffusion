@@ -1,4 +1,5 @@
 from __future__ import annotations
+import math
 
 import contextlib
 import importlib.util
@@ -61,6 +62,9 @@ class ORBBackboneConfig(FinetuneModuleBaseConfig):
     freeze_backbone: bool = False
     """Whether to freeze the backbone model."""
 
+    checkpoint_path: str | None = None
+    """Custom checkpoint path"""
+
     @override
     def create_model(self):
         return ORBBackboneModule(self)
@@ -107,6 +111,7 @@ class ORBBackboneModule(
         with optional_import_error_message("orb_models"):
             from orb_models.forcefield.forcefield_heads import (
                 ForceHead,
+                NoiseHead,
                 StressHead,
             )
             if self.hparams.using_partition:
@@ -115,6 +120,13 @@ class ORBBackboneModule(
                 from orb_models.forcefield.forcefield_heads import EnergyHead, GraphHead
 
         match prop:
+            case props.NoisePropertyConfig():
+                return NoiseHead(
+                    latent_dim=256,
+                    num_mlp_layers=1,
+                    mlp_hidden_dim=256,
+                )
+
             case props.EnergyPropertyConfig():
                 if not self.hparams.reset_output_heads:
                     return pretrained_model.graph_head
@@ -196,6 +208,7 @@ class ORBBackboneModule(
                                 name=prop.name,
                                 dim=1,
                                 domain="real",
+                                row_to_property_fn= lambda l: torch.randn((1, 1))
                             ),
                             node_aggregation=prop.reduction, # type: ignore
                         )
@@ -236,6 +249,28 @@ class ORBBackboneModule(
         else:
             self.conservative = True
         backbone = pretrained_model.model
+
+        if hasattr(self.hparams, 'checkpoint_path') and self.hparams.checkpoint_path:
+            log.info(f"Loading custom checkpoint from: {self.hparams.checkpoint_path}")
+            print(f"Loading custom checkpoint from: {self.hparams.checkpoint_path}", flush=True)
+            checkpoint = torch.load(self.hparams.checkpoint_path, map_location='cpu', weights_only=False)
+            if 'state_dict' in checkpoint:
+                state_dict = checkpoint['state_dict']
+            elif 'model' in checkpoint:
+                state_dict = checkpoint['model']
+            else:
+                state_dict = checkpoint
+            
+            if hasattr(self, '_filter_state_dict'):
+                state_dict = self._filter_state_dict(state_dict, backbone)
+            
+            # Load the state dict
+            missing_keys, unexpected_keys = backbone.load_state_dict(state_dict, strict=False)
+            
+            if missing_keys:
+                log.warning(f"Missing keys when loading checkpoint: {missing_keys}")
+            if unexpected_keys:
+                log.warning(f"Unexpected keys when loading checkpoint: {unexpected_keys}")
 
         # By default, ORB runs the `load_model_for_inference` function on the model,
         #   which sets the model to evaluation mode and freezes the parameters.
@@ -291,11 +326,99 @@ class ORBBackboneModule(
             yield
 
 
+    def _filter_state_dict(self, state_dict, model):
+        """Filter state dict to match model parameters."""
+        # Remove keys that don't match the model
+        model_keys = set(model.state_dict().keys())
+        filtered_dict = {}
+        
+        for key, value in state_dict.items():
+            # Handle potential prefix mismatches (e.g., 'backbone.', 'model.', etc.)
+            clean_key = key
+            prefixes_to_remove = ['backbone.', 'model.', 'module.']
+            for prefix in prefixes_to_remove:
+                if clean_key.startswith(prefix):
+                    clean_key = clean_key[len(prefix):]
+                    break
+            
+            if clean_key in model_keys:
+                filtered_dict[clean_key] = value
+        
+        return filtered_dict
+
+
+
+    def sinusoidal_time_embedding_discrete(self, t, dim, T, max_period=10000):
+        """
+        Sinusoidal embedding for discrete timesteps.
+
+        t: int tensor of shape (...) with values in [0, T-1]
+        dim: embedding dimension
+        T: total number of discrete diffusion steps
+        returns: (..., dim)
+        """
+        # convert discrete t to float
+        t = t.float()
+
+        # optional: normalize to [0, 1]
+        # this matches DDPM practice of feeding raw integer t
+        t = t / T
+
+        half = dim // 2
+        freqs = torch.exp(
+            -math.log(max_period) * torch.arange(
+                half, dtype=t.dtype, device=t.device
+            ) / half
+        )
+
+        args = t[..., None] * freqs[None, :]  # shape (..., half)
+
+        emb = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
+
+        if dim % 2 == 1:
+            emb = torch.nn.functional.pad(emb, (0, 1))
+
+        return emb
+
+
+    def sinusoidal_time_embedding_2(self, t, dim, max_period=10000):
+        """
+        t: shape (...)
+        returns: shape (..., dim)
+        """
+        half = dim // 2
+        freqs = torch.exp(
+            -math.log(max_period) * torch.arange(half, dtype=t.dtype, device=t.device) / half
+        )
+        # t should broadcast properly
+        args = t[..., None] * freqs[None, :]  # shape (..., half)
+
+        emb = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
+
+        if dim % 2:
+            emb = torch.nn.functional.pad(emb, (0,1))
+
+        return emb
+
+
     @override
     def model_forward(self, batch, mode: str):
         with optional_import_error_message("orb_models"):
             from orb_models.forcefield.forcefield_utils import compute_gradient_forces_and_stress
-        
+
+        # add the time step here
+        t = batch.system_features["t"].float().to(next(self.parameters()).device)
+        if self.type == "discrete":
+            T = batch.system_features["T"].float().to(next(self.parameters()).device)
+            t_emb = self.sinusoidal_time_embedding_discrete(t, 256, T)
+        elif self.type == "vp":
+            t_emb = self.sinusoidal_time_embedding_2(t, 256)
+        else:
+            raise ValueError("Invalid type given")
+            
+        t_emb = t_emb.repeat_interleave(batch.n_node, dim=0)
+        batch.system_features["t_emb"] = t_emb
+
         # Run the backbone
         out = self.backbone(batch)
         node_features = out["node_features"]
@@ -484,7 +607,12 @@ class ORBBackboneModule(
             system_config=self.system_config,
             device=torch.device("cpu"),
         )
-        
+        if "t" in atoms.info:
+            atom_graphs.system_features["t"] = torch.tensor([atoms.info["t"]], dtype=torch.float32)
+            self.type = atoms.info["type"]
+            if atoms.info["type"] == "discrete":
+                atom_graphs.system_features["T"] = torch.tensor([atoms.info["T"]], dtype=torch.float32)
+ 
         if has_labels:
             if atom_graphs.system_targets is None:
                 atom_graphs = atom_graphs._replace(system_targets={})

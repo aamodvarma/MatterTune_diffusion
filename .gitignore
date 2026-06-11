@@ -228,5 +228,16 @@ bfg.jar
 docs/_autosummary/
 contents/
 results/
+<<<<<<< HEAD
 offline-distill/
 */graph_partition.c
+=======
+examples/offline-distill
+
+data/
+outs/
+mattertune_denoisingdiffusion/
+logs/
+.venv/
+cpkts/
+>>>>>>> diffusion

@@ -1,4 +1,5 @@
 from __future__ import annotations
+import torch
 
 import logging
 from pathlib import Path
@@ -32,6 +33,18 @@ class XYZDatasetConfig(DatasetConfigBase):
     down_sample_refill: bool = False
     """Refill the dataset after down sampling to achieve the same length as the original dataset"""
 
+    T: int = 1
+    """Diffusion total time steps"""
+
+    sigma_min: float 
+    """Diffusion sigma min"""
+
+    sigma_max: float 
+    """Diffusion sigma max"""
+
+    diffusion_type: str = "discrete"
+    """Either discrete (eps prediction) or continous (score-matching)"""
+
     @override
     def create_dataset(self):
         return XYZDataset(self)
@@ -61,10 +74,49 @@ class XYZDataset(Dataset[ase.Atoms]):
                 atoms_list = new_atoms_list
         self.atoms_list: list[Atoms] = atoms_list
         log.info(f"Loaded {len(self.atoms_list)} atoms from {self.config.src}")
+    
+    def vp_xt(self, x0, t, eps):
+        beta_min = self.config.sigma_min
+        beta_max = self.config.sigma_max
+        t = torch.as_tensor(t, dtype=x0.dtype, device=x0.device)
+
+        int_beta = beta_min * t + 0.5 * (beta_max - beta_min) * t**2
+        alpha = torch.exp(-0.5 * int_beta)
+        sigma = torch.sqrt(1.0 - torch.exp(-int_beta))
+        return x0 * alpha + eps * sigma
 
     @override
     def __getitem__(self, idx: int) -> ase.Atoms:
-        return self.atoms_list[idx]
+        atoms = self.atoms_list[idx].copy()
+        if self.config.diffusion_type == "discrete":
+            T = self.config.T
+            t = torch.randint(0, T, (1,)).item()
+            sigma_min = self.config.sigma_min
+            sigma_max = self.config.sigma_max
+            sigma_t = sigma_min * (sigma_max / sigma_min) ** (t / (T))
+
+            x_0 = torch.tensor(atoms.positions, dtype=torch.float32)
+            eps = torch.randn_like(x_0)
+            x_t = x_0 + eps * sigma_t
+
+            atoms.positions = x_t.numpy()
+            atoms.info['noise'] = (eps).numpy()
+            atoms.info['t'] = t
+            atoms.info['T'] = T
+            atoms.info['type'] = 'discrete'
+        elif self.config.diffusion_type == "vp":
+            # sample t unifromly from 0, 1
+            t = torch.rand(1).item()
+            x0 = torch.tensor(atoms.positions, dtype=torch.float32)
+            eps = torch.randn_like(x0)
+            # translatoin drift stuff
+            eps = eps - eps.mean(dim=0, keepdim=True)
+            xt = self.vp_xt(x0, t, eps)
+            atoms.positions = xt.numpy()
+            atoms.info['noise'] = (eps).numpy()
+            atoms.info['t'] = t
+            atoms.info['type'] = 'vp'
+        return atoms
 
     def __len__(self) -> int:
         return len(self.atoms_list)
