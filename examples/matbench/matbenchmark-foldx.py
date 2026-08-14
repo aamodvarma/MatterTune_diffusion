@@ -26,7 +26,7 @@ from mattertune.configs import WandbLoggerConfig
 from mattertune.backbones.jmp.model import get_jmp_s_lr_decay
 
 logging.basicConfig(level=logging.WARNING)
-nu.pretty()
+# nu.pretty()
 
 
 def main(args_dict: dict):
@@ -50,6 +50,12 @@ def main(args_dict: dict):
         elif args_dict["model_type"] == "orb":
             hparams.model = MC.ORBBackboneConfig.draft()
             hparams.model.pretrained_model = "orb-v2"
+            if args_dict['random_init']:
+                print("Random initing model")
+                hparams.model.random_init = True
+            if args_dict['cpkt_path']:
+                print("Loading provided cpkt:", args_dict['cpkt_path'])
+                hparams.model.checkpoint_path=args_dict['cpkt_path']
         else:
             raise ValueError(
                 "Invalid model type, please choose from 'eqv2', 'jmp', 'orb'."
@@ -100,6 +106,7 @@ def main(args_dict: dict):
         hparams.data.dataset.atoms_list = atoms_list
         hparams.data.train_split = args_dict["train_split"]
         hparams.data.batch_size = args_dict["batch_size"]
+        hparams.data.pin_memory = False
         if args_dict["model_type"] == "orb" or args_dict["model_type"] == "eqv2":
             hparams.data.num_workers = 0
 
@@ -124,7 +131,7 @@ def main(args_dict: dict):
         )
 
         # Configure Model Checkpoint
-        ckpt_path = f"./checkpoints-{args_dict['task']}/{args_dict['model_type']}-best-fold{fold_idx}.ckpt"
+        ckpt_path = f"./checkpoints-{args_dict['task']}/{args_dict['model_type']}-best-fold{fold_idx}-randominit_{args_dict['random_init']}.ckpt"
         if os.path.exists(ckpt_path):
             os.remove(ckpt_path)
         hparams.trainer.checkpoint = MC.ModelCheckpointConfig(
@@ -139,7 +146,7 @@ def main(args_dict: dict):
         hparams.trainer.loggers = [
             WandbLoggerConfig(
                 project="MatterTune-Matbench-FoldX",
-                name=f"{args_dict['model_type']}-{args_dict['task']}-fold{fold_idx}",
+                name=f"{args_dict['model_type']}-{args_dict['task']}-fold{fold_idx}-{args_dict['normalize_method']}",
                 offline=False,
             )
         ]
@@ -264,15 +271,14 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model_type", type=str, default="orb", choices=["jmp", "orb", "eqv2"]
+        "--model_type", type=str, default="jmp", choices=["jmp", "orb", "eqv2"]
     )
     parser.add_argument("--fold_index", type=int, default=0)
     parser.add_argument("--freeze_backbone", action="store_true")
-    parser.add_argument("--task", type=str, default="matbench_mp_gap")
-    # parser.add_argument("--task", type=str, default="matbench_dielectric")
+    parser.add_argument("--task", type=str, default="matbench_dielectric")
     parser.add_argument("--property_reduction", type=str, default="mean")
     parser.add_argument("--train_split", type=float, default=0.9)
-    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--batch_size", type=int, default=6)
     parser.add_argument("--lr", type=float, default=8.0e-5)
     parser.add_argument(
         "--lr_scheduler",
@@ -281,13 +287,17 @@ if __name__ == "__main__":
         choices=["cosine", "warmup-cosine", "rlp"],
     )
     parser.add_argument("--max_epochs", type=int, default=500)
-    parser.add_argument("--devices", type=int, nargs="+", default=[1, 2, 3])
+    parser.add_argument("--devices", type=int, nargs="+", default=[0])
     parser.add_argument("--ema_decay", type=float, default=0.99)
+    parser.add_argument("--normalize_method", type=str, default="None")
     parser.add_argument("--load_best_ckpt", action="store_true")
     parser.add_argument("--skip_tuning", action="store_true")
     parser.add_argument("--skip_inference", action="store_true")
+    parser.add_argument("--random_init", type=bool, default=False)
+    parser.add_argument("--cpkt_path", type=str, default=None)
     args = parser.parse_args()
     args_dict = vars(args)
 
     os.makedirs("./results", exist_ok=True)
     main(args_dict)
+

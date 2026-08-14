@@ -63,8 +63,10 @@ def hparams(args_dict):
     hparams.trainer.gradient_clip_val = 1.0
     hparams.trainer.precision = "32"
 
+    name = args_dict["name"]
+
     # Configure Model Checkpoint
-    ckpt_name = f"{args_dict['model_type']}-best-VP-protosynth-mixed-.05-1"
+    ckpt_name = f"{args_dict['model_type']}-best-VP-.05-1_{name}"
     if os.path.exists(f"./checkpoints/{ckpt_name}.ckpt"):
         os.remove(f"./checkpoints/{ckpt_name}.ckpt")
     hparams.trainer.checkpoint = MC.ModelCheckpointConfig(
@@ -93,21 +95,15 @@ def hparams(args_dict):
 
 args_dict = {
     "model_type" : "orb-v2",
-    "batch_size" : 32,
+    "batch_size" : 16,
     "devices" : [0],
     "max_epochs" : 400,
     "T": 32,
     "sigma_min": 0.1,
     "sigma_max": 2,
-    # "src" : "./mixed.xyz",
-    # "src" : "./data/mattergen_synth.extxyz",
-    # "src" : "./data/proto.extxyz",
-    #"src":"./data/cifs_lhs_random_volfixed_1_20kscreened_unitcell.extxyz",
-    "src":"/global/cfs/projectdirs/m3641/Aamod/MatterTune_geometric_opt/screened/screened_50k_proto_sampled_from_66k.extxyz",
-    #"src" : "./data/synth.xyz",
-    # "src" : "/global/cfs/projectdirs/m3641/Aamod/MatterTune_geometric_opt/trajectory_small_list.xyz",
-    # "ckpt_path" : "/global/cfs/projectdirs/m3641/Aamod/MatterTune_diffusion/cpkts/diffusion_VP_T-32_sigmamin-0.05_sigmamax-2.cpkt",
+    "src":"/storage/aamod/projects/data/final/20k_synth.xyz",
     "ckpt_path" : None,
+    "name" : "20k_synth"
 }
 
 mt_config = hparams(args_dict)
@@ -115,7 +111,7 @@ model, trainer = MatterTuner(mt_config).tune()
 filename = (
     f"diffusion_VP-synth-_T-{args_dict['T']}_"
     f"{args_dict['sigma_min']}-{args_dict['sigma_max']}-"
-    f"{args_dict['max_epochs']}_protosynth_mixed.cpkt"
+    f"{args_dict['max_epochs']}_{args_dict['name']}.cpkt"
 )
 
 trainer.save_checkpoint(f"./cpkts/{filename}")
